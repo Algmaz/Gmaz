@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GMAZ Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f5a623;--green:#39ff14;--gg:#00ff88;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#000;color:#fff;font-family:'Tajawal',sans-serif;overflow-x:hidden;}
+#sc{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+.nb{position:fixed;top:0;right:0;width:55%;height:100%;z-index:0;pointer-events:none;
+background:radial-gradient(ellipse at 80% 20%,rgba(200,80,20,.2) 0%,transparent 50%),
+radial-gradient(ellipse at 90% 60%,rgba(255,140,0,.12) 0%,transparent 40%),
+radial-gradient(ellipse at 60% 80%,rgba(20,60,180,.14) 0%,transparent 45%);}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(0,0,0,.65);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,166,35,.15);}
+.nl{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;color:var(--green);text-shadow:0 0 10px var(--green),0 0 30px var(--gg),0 0 60px rgba(57,255,20,.4);letter-spacing:6px;animation:lp 3s ease-in-out infinite;}
+@keyframes lp{0%,100%{text-shadow:0 0 10px var(--green),0 0 30px var(--gg),0 0 60px rgba(57,255,20,.4);}50%{text-shadow:0 0 25px var(--green),0 0 60px var(--gg),0 0 100px rgba(57,255,20,.6);}}
+.nv{display:flex;gap:32px;list-style:none;}
+.nv a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.95rem;letter-spacing:1px;transition:color .3s,text-shadow .3s;}
+.nv a:hover{color:var(--green);text-shadow:0 0 8px var(--green);}
+.nc{background:linear-gradient(135deg,var(--green),#00cc66);color:#000;padding:10px 24px;border-radius:30px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;letter-spacing:1px;box-shadow:0 0 20px rgba(57,255,20,.4);transition:all .3s;font-family:'Tajawal',sans-serif;}
+.nc:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(57,255,20,.7);}
+.hero{position:relative;z-index:10;min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;}
+.hc{max-width:580px;}
+.hb{display:inline-block;background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.3);color:var(--green);padding:6px 18px;border-radius:20px;font-size:.8rem;letter-spacing:3px;margin-bottom:28px;animation:fu 1s ease both;}
+.ht{font-family:'Orbitron',sans-serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:900;line-height:1;color:var(--green);text-shadow:0 0 20px var(--green),0 0 60px rgba(57,255,20,.5),0 0 100px rgba(0,255,136,.3);letter-spacing:8px;animation:fu 1s ease .2s both;margin-bottom:12px;}
+.hs{font-size:1.1rem;color:var(--gold);font-weight:600;letter-spacing:2px;margin-bottom:24px;animation:fu 1s ease .35s both;word-break:keep-all;white-space:nowrap;}
+.hd{color:rgba(255,255,255,.55);font-size:1.05rem;line-height:1.8;margin-bottom:44px;animation:fu 1s ease .5s both;}
+.hbt{display:flex;gap:16px;flex-wrap:wrap;animation:fu 1s ease .65s both;}
+.bp{background:linear-gradient(135deg,var(--green),#00cc66);color:#000;padding:14px 36px;border-radius:40px;font-weight:700;font-size:1rem;letter-spacing:2px;cursor:pointer;border:none;box-shadow:0 0 30px rgba(57,255,20,.5);transition:all .3s;font-family:'Tajawal',sans-serif;}
+.bp:hover{transform:translateY(-3px);box-shadow:0 0 55px rgba(57,255,20,.8);}
+.bs{background:transparent;color:#fff;padding:14px 36px;border-radius:40px;font-size:1rem;letter-spacing:2px;cursor:pointer;border:1px solid rgba(255,255,255,.25);transition:all .3s;font-family:'Tajawal',sans-serif;}
+.bs:hover{border-color:var(--green);color:var(--green);}
+.hst{display:flex;gap:48px;margin-top:64px;animation:fu 1s ease .8s both;}
+.sn{font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:700;color:var(--green);text-shadow:0 0 15px rgba(57,255,20,.5);}
+.sl{font-size:.78rem;color:rgba(255,255,255,.45);letter-spacing:2px;margin-top:4px;}
+.sec{position:relative;z-index:10;padding:100px 48px;}
+.sh{text-align:center;margin-bottom:64px;}
+.st{color:var(--green);font-size:.8rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;display:block;}
+.sti{font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:700;color:#fff;letter-spacing:3px;}
+.dv{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);margin:20px auto 0;}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1200px;margin:0 auto;}
+.pc{background:rgba(255,255,255,.03);border:1px solid rgba(245,166,35,.12);border-radius:16px;overflow:hidden;transition:all .4s;cursor:pointer;}
+.pc:hover{transform:translateY(-8px);border-color:rgba(57,255,20,.3);box-shadow:0 20px 60px rgba(57,255,20,.12);}
+.pi{height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:rgba(255,255,255,.02);border-bottom:1px solid rgba(255,255,255,.05);position:relative;}
+.pb{position:absolute;top:12px;left:12px;background:var(--green);color:#000;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:1px;}
+.pin{padding:20px;}
+.pn{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:1px;}
+.pd{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:16px;}
+.pf{display:flex;align-items:center;justify-content:space-between;}
+.pp{font-family:'Orbitron',sans-serif;font-size:1.2rem;color:var(--gold);font-weight:700;}
+.ab{background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.3);color:var(--green);padding:8px 18px;border-radius:20px;font-size:.82rem;cursor:pointer;transition:all .3s;font-family:'Tajawal',sans-serif;}
+.ab:hover{background:var(--green);color:#000;font-weight:700;}
+footer{position:relative;z-index:10;text-align:center;padding:48px;border-top:1px solid rgba(245,166,35,.1);}
+.fl{font-family:'Orbitron',sans-serif;font-size:2.5rem;font-weight:900;color:var(--green);text-shadow:0 0 20px var(--green),0 0 50px rgba(57,255,20,.4);letter-spacing:8px;margin-bottom:10px;}
+.fn{font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:700;color:var(--green);text-shadow:0 0 10px var(--green),0 0 25px rgba(57,255,20,.4);letter-spacing:3px;margin-bottom:20px;}
+.ft{color:rgba(255,255,255,.3);font-size:.85rem;letter-spacing:2px;}
+@keyframes fu{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:#000;}::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px;}
+
+.courses{position:relative;z-index:10;padding:80px 48px;}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:1200px;margin:0 auto;}
+.course-card{background:rgba(255,255,255,.03);border:1px solid rgba(57,255,20,.15);border-radius:20px;overflow:hidden;transition:all .4s;position:relative;}
+.course-card:hover{transform:translateY(-10px);border-color:rgba(57,255,20,.5);box-shadow:0 25px 70px rgba(57,255,20,.15);}
+.course-num{position:absolute;top:14px;right:18px;font-family:'Orbitron',sans-serif;font-size:2.8rem;font-weight:900;color:rgba(57,255,20,.07);line-height:1;}
+.course-top{padding:28px 22px 18px;border-bottom:1px solid rgba(255,255,255,.05);}
+.course-icon{font-size:2.6rem;margin-bottom:14px;display:block;}
+.course-level{display:inline-block;padding:4px 14px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:2px;margin-bottom:10px;}
+.lv1{background:rgba(57,255,20,.15);color:#39ff14;border:1px solid rgba(57,255,20,.3);}
+.lv2{background:rgba(0,200,255,.15);color:#00c8ff;border:1px solid rgba(0,200,255,.3);}
+.lv3{background:rgba(255,166,0,.15);color:#ffa600;border:1px solid rgba(255,166,0,.3);}
+.lv4{background:rgba(200,100,255,.15);color:#c864ff;border:1px solid rgba(200,100,255,.3);}
+.lv5{background:rgba(255,60,60,.15);color:#ff3c3c;border:1px solid rgba(255,60,60,.3);}
+.course-title{font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:8px;}
+.course-desc{color:rgba(255,255,255,.5);font-size:.86rem;line-height:1.7;}
+.course-bottom{padding:18px 22px;}
+.course-topics{list-style:none;margin-bottom:16px;}
+.course-topics li{color:rgba(255,255,255,.6);font-size:.82rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:8px;}
+.course-topics li:before{content:'▸';color:#39ff14;font-size:.7rem;flex-shrink:0;}
+.course-topics li:last-child{border-bottom:none;}
+.pbar{height:3px;background:rgba(255,255,255,.08);border-radius:2px;margin-bottom:16px;}
+.pfill{height:100%;border-radius:2px;}
+.course-footer{display:flex;align-items:center;justify-content:space-between;}
+.cduration{color:rgba(255,255,255,.4);font-size:.78rem;letter-spacing:1px;}
+.cbtn{background:transparent;padding:8px 20px;border-radius:20px;font-size:.82rem;cursor:pointer;transition:all .3s;font-family:'Tajawal',sans-serif;font-weight:700;}
+.cbtn:hover{opacity:.8;transform:scale(1.05);}
+.cbtn1{color:#39ff14;border:1px solid rgba(57,255,20,.3);}
+.cbtn1:hover{background:rgba(57,255,20,.15);}
+.cbtn2{color:#00c8ff;border:1px solid rgba(0,200,255,.3);}
+.cbtn2:hover{background:rgba(0,200,255,.15);}
+.cbtn3{color:#ffa600;border:1px solid rgba(255,166,0,.3);}
+.cbtn3:hover{background:rgba(255,166,0,.15);}
+.cbtn4{color:#c864ff;border:1px solid rgba(200,100,255,.3);}
+.cbtn4:hover{background:rgba(200,100,255,.15);}
+.cbtn5{color:#ff3c3c;border:1px solid rgba(255,60,60,.3);}
+.cbtn5:hover{background:rgba(255,60,60,.15);}
+
+.office-section{position:relative;z-index:10;padding:80px 48px;}
+.office-hero{max-width:1200px;margin:0 auto 60px;text-align:center;background:linear-gradient(135deg,rgba(0,100,255,.08),rgba(57,255,20,.06));border:1px solid rgba(0,120,255,.2);border-radius:24px;padding:48px 40px;}
+.office-hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:900;color:#fff;letter-spacing:3px;margin-bottom:16px;}
+.office-hero-title span{color:#39ff14;}
+.office-hero-sub{color:rgba(255,255,255,.55);font-size:1rem;line-height:1.8;max-width:700px;margin:0 auto 28px;}
+.office-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:28px;}
+.office-badge{padding:6px 18px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:1px;}
+.badge-blue{background:rgba(0,120,255,.15);color:#4da6ff;border:1px solid rgba(0,120,255,.3);}
+.badge-green{background:rgba(57,255,20,.12);color:#39ff14;border:1px solid rgba(57,255,20,.25);}
+.badge-gold{background:rgba(245,166,35,.12);color:#f5a623;border:1px solid rgba(245,166,35,.25);}
+.office-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.office-btn-main{background:linear-gradient(135deg,#0078d4,#005fa3);color:#fff;padding:13px 32px;border-radius:30px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;box-shadow:0 0 25px rgba(0,120,212,.4);transition:all .3s;font-family:'Tajawal',sans-serif;letter-spacing:1px;}
+.office-btn-main:hover{transform:translateY(-3px);box-shadow:0 0 45px rgba(0,120,212,.6);}
+.office-btn-sec{background:transparent;color:#39ff14;padding:13px 32px;border-radius:30px;font-weight:700;font-size:.95rem;cursor:pointer;border:1px solid rgba(57,255,20,.35);transition:all .3s;font-family:'Tajawal',sans-serif;}
+.office-btn-sec:hover{background:rgba(57,255,20,.1);}
+.office-apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto 60px;}
+.office-app-card{background:rgba(255,255,255,.03);border-radius:18px;overflow:hidden;transition:all .4s;cursor:pointer;border:1px solid rgba(255,255,255,.07);}
+.office-app-card:hover{transform:translateY(-8px);box-shadow:0 20px 55px rgba(0,0,0,.4);}
+.app-header{padding:24px 22px 18px;display:flex;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,.05);}
+.app-icon{font-size:2.4rem;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+.icon-word{background:rgba(0,90,255,.2);}
+.icon-excel{background:rgba(0,160,70,.2);}
+.icon-ppt{background:rgba(210,60,20,.2);}
+.icon-outlook{background:rgba(0,100,200,.2);}
+.icon-teams{background:rgba(80,60,200,.2);}
+.icon-access{background:rgba(160,20,100,.2);}
+.icon-onenote{background:rgba(130,50,200,.2);}
+.icon-sharepoint{background:rgba(0,130,80,.2);}
+.app-title-block{}
+.app-name{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:1px;}
+.app-tagline{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:3px;}
+.app-body{padding:18px 22px;}
+.app-uses{list-style:none;margin-bottom:16px;}
+.app-uses li{color:rgba(255,255,255,.6);font-size:.82rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+.app-uses li:before{content:'✓';font-size:.7rem;flex-shrink:0;margin-top:2px;}
+.app-uses li:last-child{border-bottom:none;}
+.app-footer{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
+.app-level{font-size:.72rem;padding:3px 12px;border-radius:10px;letter-spacing:1px;font-weight:700;}
+.app-dl-btn{padding:7px 18px;border-radius:16px;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .3s;font-family:'Tajawal',sans-serif;border:none;}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:1000px;margin:0 auto;}
+.plan-card{background:rgba(255,255,255,.03);border-radius:20px;padding:32px 28px;text-align:center;border:1px solid rgba(255,255,255,.08);transition:all .4s;position:relative;overflow:hidden;}
+.plan-card.featured{border-color:rgba(57,255,20,.4);box-shadow:0 0 40px rgba(57,255,20,.1);}
+.plan-badge{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-size:.68rem;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:1px;white-space:nowrap;}
+.plan-icon{font-size:2.5rem;margin-bottom:14px;}
+.plan-name{font-family:'Orbitron',sans-serif;font-size:1.1rem;font-weight:700;color:#fff;letter-spacing:2px;margin-bottom:8px;}
+.plan-audience{font-size:.82rem;color:rgba(255,255,255,.45);margin-bottom:20px;}
+.plan-price{font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.plan-price span{font-size:.85rem;color:rgba(255,255,255,.4);font-family:'Tajawal',sans-serif;}
+.plan-features{list-style:none;text-align:right;margin:20px 0;}
+.plan-features li{color:rgba(255,255,255,.6);font-size:.83rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:8px;}
+.plan-features li:before{content:'&#10003;';color:#39ff14;font-size:.75rem;}
+.plan-features li:last-child{border-bottom:none;}
+.plan-btn{width:100%;padding:12px;border-radius:24px;font-weight:700;font-size:.92rem;cursor:pointer;margin-top:8px;transition:all .3s;font-family:'Tajawal',sans-serif;letter-spacing:1px;}
+
+.ai-intro-section{position:relative;z-index:10;padding:80px 48px;}
+.ai-intro-hero{max-width:1200px;margin:0 auto 60px;text-align:center;background:linear-gradient(135deg,rgba(57,255,20,.05),rgba(0,200,255,.05),rgba(200,100,255,.05));border:1px solid rgba(57,255,20,.15);border-radius:28px;padding:60px 48px;position:relative;overflow:hidden;}
+.ai-intro-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(57,255,20,.1),transparent 70%);border-radius:50%;}
+.ai-intro-hero::after{content:'';position:absolute;bottom:-80px;left:-80px;width:260px;height:260px;background:radial-gradient(circle,rgba(0,200,255,.08),transparent 70%);border-radius:50%;}
+.ai-intro-tag{display:inline-block;background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.25);color:#39ff14;padding:5px 18px;border-radius:20px;font-size:.72rem;letter-spacing:3px;margin-bottom:22px;}
+.ai-intro-title-en{font-family:'Orbitron',sans-serif;font-size:clamp(1.2rem,2.8vw,2rem);font-weight:900;color:#fff;letter-spacing:2px;margin-bottom:8px;direction:ltr;line-height:1.3;}
+.ai-intro-title-en span{color:#39ff14;}
+.ai-intro-title-ar{font-size:clamp(1.1rem,2.5vw,1.7rem);color:rgba(255,255,255,.65);font-family:'Tajawal',sans-serif;font-weight:400;margin-bottom:28px;}
+.ai-intro-title-ar span{color:#39ff14;font-weight:700;}
+.ai-intro-desc-en{color:rgba(255,255,255,.42);font-size:.88rem;line-height:1.9;max-width:780px;margin:0 auto 10px;direction:ltr;text-align:center;font-style:italic;}
+.ai-intro-desc-ar{color:rgba(255,255,255,.65);font-size:.97rem;line-height:1.9;max-width:780px;margin:0 auto 40px;}
+.ai-kpi-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
+.ai-kpi{text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(57,255,20,.12);border-radius:16px;padding:20px 28px;min-width:130px;transition:all .3s;}
+.ai-kpi:hover{border-color:rgba(57,255,20,.3);transform:translateY(-4px);}
+.ai-kpi-num{font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:700;color:#39ff14;text-shadow:0 0 15px rgba(57,255,20,.4);}
+.ai-kpi-en{font-size:.63rem;color:rgba(255,255,255,.3);direction:ltr;font-style:italic;margin-top:2px;}
+.ai-kpi-ar{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:2px;}
+.ai-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto 60px;}
+.ai-pillar{background:rgba(255,255,255,.03);border-radius:20px;padding:32px 26px;border:1px solid rgba(255,255,255,.07);transition:all .4s;position:relative;overflow:hidden;}
+.ai-pillar::before{content:'';position:absolute;top:0;right:0;width:100%;height:3px;border-radius:3px 3px 0 0;}
+.ai-pillar.p1::before{background:linear-gradient(90deg,#39ff14,#00cc66);}
+.ai-pillar.p2::before{background:linear-gradient(90deg,#00c8ff,#0077ff);}
+.ai-pillar.p3::before{background:linear-gradient(90deg,#ffa600,#ff6600);}
+.ai-pillar.p4::before{background:linear-gradient(90deg,#c864ff,#8800ff);}
+.ai-pillar.p5::before{background:linear-gradient(90deg,#ff6eb4,#cc0066);}
+.ai-pillar.p6::before{background:linear-gradient(90deg,#00ffd5,#00aaaa);}
+.ai-pillar:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.15);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.ai-pillar-icon{font-size:2.4rem;margin-bottom:16px;}
+.ai-pillar-title-en{font-family:'Orbitron',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:1px;direction:ltr;margin-bottom:3px;}
+.ai-pillar-title-ar{font-size:1rem;font-weight:700;color:#fff;margin-bottom:14px;}
+.ai-pillar-en{color:rgba(255,255,255,.32);font-size:.76rem;line-height:1.7;direction:ltr;text-align:left;font-style:italic;margin-bottom:8px;}
+.ai-pillar-ar{color:rgba(255,255,255,.58);font-size:.84rem;line-height:1.8;margin-bottom:16px;}
+.ai-pillar-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.ai-tag{padding:3px 10px;border-radius:10px;font-size:.68rem;letter-spacing:.5px;font-weight:600;}
+.ai-steps{max-width:1200px;margin:0 auto 60px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:48px 40px;}
+.ai-steps-title-en{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:2px;text-align:center;direction:ltr;margin-bottom:4px;}
+.ai-steps-title-ar{font-size:1.2rem;font-weight:700;color:rgba(255,255,255,.7);text-align:center;margin-bottom:40px;}
+.ai-steps-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;position:relative;}
+.ai-step{text-align:center;padding:20px 16px;position:relative;}
+.ai-step:not(:last-child)::after{content:'←';position:absolute;left:-10px;top:50%;transform:translateY(-50%);color:rgba(57,255,20,.3);font-size:1.2rem;font-family:monospace;}
+.ai-step-circle{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;margin:0 auto 14px;border:2px solid;}
+.ai-step-en{font-size:.72rem;color:rgba(255,255,255,.35);direction:ltr;font-style:italic;margin-bottom:4px;}
+.ai-step-ar{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.72);}
+.ai-cta{max-width:1200px;margin:0 auto;text-align:center;background:linear-gradient(135deg,rgba(57,255,20,.08),rgba(0,200,255,.05));border:1px solid rgba(57,255,20,.2);border-radius:22px;padding:44px 40px;}
+.ai-cta-en{font-family:'Orbitron',sans-serif;font-size:clamp(1rem,2vw,1.5rem);font-weight:700;color:#fff;direction:ltr;margin-bottom:6px;letter-spacing:2px;}
+.ai-cta-ar{font-size:clamp(1rem,2vw,1.4rem);font-weight:700;color:rgba(255,255,255,.7);margin-bottom:20px;}
+.ai-cta-sub-en{color:rgba(255,255,255,.38);font-size:.82rem;direction:ltr;font-style:italic;margin-bottom:6px;}
+.ai-cta-sub-ar{color:rgba(255,255,255,.58);font-size:.9rem;margin-bottom:30px;}
+.ai-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.ai-cta-btn1{background:linear-gradient(135deg,#39ff14,#00cc66);color:#000;padding:13px 34px;border-radius:30px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;letter-spacing:1px;box-shadow:0 0 25px rgba(57,255,20,.4);transition:all .3s;}
+.ai-cta-btn1:hover{transform:translateY(-3px);box-shadow:0 0 45px rgba(57,255,20,.65);}
+.ai-cta-btn2{background:transparent;color:#fff;padding:13px 34px;border-radius:30px;font-weight:600;font-size:.95rem;cursor:pointer;border:1px solid rgba(255,255,255,.2);font-family:'Tajawal',sans-serif;transition:all .3s;}
+.ai-cta-btn2:hover{border-color:#39ff14;color:#39ff14;}
+@media(max-width:700px){.ai-intro-hero{padding:40px 24px;}.ai-steps-list{grid-template-columns:1fr 1fr;}.ai-step:not(:last-child)::after{display:none;}}
+
+.ai-modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:1000;backdrop-filter:blur(8px);overflow-y:auto;}
+.ai-modal-overlay.active{display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;}
+.ai-modal{background:#0a0a0a;border:1px solid rgba(57,255,20,.2);border-radius:24px;max-width:800px;width:100%;padding:0;overflow:hidden;animation:modalIn .4s ease;}
+@keyframes modalIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.ai-modal-header{padding:32px 36px 24px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;background:linear-gradient(135deg,rgba(57,255,20,.05),transparent);}
+.ai-modal-close{position:absolute;top:20px;left:20px;background:rgba(255,255,255,.08);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;}
+.ai-modal-close:hover{background:rgba(255,60,60,.2);color:#ff3c3c;}
+.ai-modal-lesson-num{font-family:'Orbitron',sans-serif;font-size:.75rem;color:rgba(57,255,20,.6);letter-spacing:3px;margin-bottom:8px;direction:ltr;}
+.ai-modal-title-en{font-family:'Orbitron',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:1px;direction:ltr;margin-bottom:4px;}
+.ai-modal-title-ar{font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.7);margin-bottom:16px;}
+.ai-modal-meta{display:flex;gap:16px;flex-wrap:wrap;}
+.ai-modal-badge{padding:4px 14px;border-radius:14px;font-size:.72rem;font-weight:700;letter-spacing:1px;}
+.ai-modal-body{padding:32px 36px;}
+.ai-lesson-block{margin-bottom:32px;}
+.ai-lesson-block-title{font-family:'Orbitron',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:2px;margin-bottom:4px;direction:ltr;}
+.ai-lesson-block-title-ar{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:14px;}
+.ai-lesson-block-divider{height:1px;background:rgba(255,255,255,.06);margin-bottom:18px;}
+.ai-content-en{color:rgba(255,255,255,.38);font-size:.82rem;line-height:1.9;direction:ltr;text-align:left;font-style:italic;margin-bottom:10px;}
+.ai-content-ar{color:rgba(255,255,255,.68);font-size:.9rem;line-height:1.9;margin-bottom:18px;}
+.ai-points{list-style:none;margin-bottom:0;}
+.ai-points li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;gap:2px;}
+.ai-points li:last-child{border-bottom:none;}
+.ai-point-en{color:rgba(255,255,255,.3);font-size:.75rem;direction:ltr;text-align:left;font-style:italic;}
+.ai-point-ar{color:rgba(255,255,255,.68);font-size:.86rem;display:flex;align-items:flex-start;gap:8px;}
+.ai-point-ar::before{content:'◈';font-size:.6rem;flex-shrink:0;margin-top:4px;}
+.ai-quiz{background:rgba(57,255,20,.04);border:1px solid rgba(57,255,20,.15);border-radius:14px;padding:22px 24px;margin-top:8px;}
+.ai-quiz-title-en{font-size:.72rem;color:rgba(57,255,20,.5);direction:ltr;letter-spacing:2px;font-family:'Orbitron',sans-serif;margin-bottom:4px;}
+.ai-quiz-title-ar{font-size:.88rem;font-weight:700;color:#39ff14;margin-bottom:12px;}
+.ai-quiz-q-en{color:rgba(255,255,255,.3);font-size:.76rem;direction:ltr;font-style:italic;margin-bottom:4px;}
+.ai-quiz-q-ar{color:rgba(255,255,255,.7);font-size:.9rem;margin-bottom:14px;}
+.ai-quiz-options{display:flex;flex-direction:column;gap:8px;}
+.ai-quiz-opt{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 16px;cursor:pointer;transition:all .3s;font-size:.85rem;color:rgba(255,255,255,.6);text-align:right;}
+.ai-quiz-opt:hover{border-color:rgba(57,255,20,.3);color:#39ff14;background:rgba(57,255,20,.05);}
+.ai-quiz-opt.correct{border-color:#39ff14;background:rgba(57,255,20,.1);color:#39ff14;}
+.ai-quiz-opt.wrong{border-color:#ff3c3c;background:rgba(255,60,60,.08);color:#ff3c3c;}
+.ai-modal-footer{padding:24px 36px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;}
+.ai-next-btn{background:linear-gradient(135deg,#39ff14,#00cc66);color:#000;padding:12px 28px;border-radius:24px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;letter-spacing:1px;transition:all .3s;}
+.ai-next-btn:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(57,255,20,.4);}
+.ai-prev-btn{background:transparent;color:rgba(255,255,255,.5);padding:12px 28px;border-radius:24px;font-size:.9rem;cursor:pointer;border:1px solid rgba(255,255,255,.15);font-family:'Tajawal',sans-serif;transition:all .3s;}
+.ai-prev-btn:hover{border-color:#39ff14;color:#39ff14;}
+
+/* ===== FREEMIUM SYSTEM ===== */
+.free-preview{background:rgba(57,255,20,.05);border:1px solid rgba(57,255,20,.2);border-radius:12px;padding:16px 20px;margin-bottom:20px;}
+.free-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(57,255,20,.15);color:#39ff14;border:1px solid rgba(57,255,20,.3);padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:1px;margin-bottom:10px;}
+.free-preview-en{color:rgba(255,255,255,.38);font-size:.78rem;direction:ltr;font-style:italic;margin-bottom:5px;}
+.free-preview-ar{color:rgba(255,255,255,.6);font-size:.86rem;line-height:1.7;}
+.locked-block{position:relative;filter:blur(4px);user-select:none;pointer-events:none;opacity:.4;}
+.lock-overlay{position:relative;margin-bottom:24px;}
+.lock-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,#0a0a0a);}
+.lock-gate{background:linear-gradient(135deg,rgba(0,0,0,.9),rgba(20,20,20,.95));border:1px solid rgba(255,166,35,.2);border-radius:16px;padding:28px 24px;text-align:center;margin-bottom:20px;}
+.lock-icon{font-size:2.4rem;margin-bottom:12px;}
+.lock-title-en{font-family:'Orbitron',sans-serif;font-size:.85rem;color:#fff;letter-spacing:2px;direction:ltr;margin-bottom:4px;}
+.lock-title-ar{font-size:1rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:10px;}
+.lock-desc-en{color:rgba(255,255,255,.32);font-size:.75rem;direction:ltr;font-style:italic;margin-bottom:5px;}
+.lock-desc-ar{color:rgba(255,255,255,.55);font-size:.83rem;margin-bottom:20px;}
+.lock-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.lock-btn-register{background:linear-gradient(135deg,#39ff14,#00cc66);color:#000;padding:11px 26px;border-radius:24px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;letter-spacing:1px;transition:all .3s;}
+.lock-btn-register:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(57,255,20,.5);}
+.lock-btn-login{background:transparent;color:#fff;padding:11px 26px;border-radius:24px;font-size:.9rem;cursor:pointer;border:1px solid rgba(255,255,255,.2);font-family:'Tajawal',sans-serif;transition:all .3s;}
+.lock-btn-login:hover{border-color:#39ff14;color:#39ff14;}
+
+/* ===== AUTH MODAL ===== */
+.auth-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:2000;backdrop-filter:blur(10px);align-items:center;justify-content:center;}
+.auth-overlay.active{display:flex;}
+.auth-modal{background:#0d0d0d;border:1px solid rgba(57,255,20,.2);border-radius:22px;width:100%;max-width:440px;padding:0;overflow:hidden;animation:modalIn .4s ease;margin:20px;}
+.auth-header{padding:28px 32px 20px;border-bottom:1px solid rgba(255,255,255,.06);background:linear-gradient(135deg,rgba(57,255,20,.05),transparent);text-align:center;position:relative;}
+.auth-close{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.07);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1rem;cursor:pointer;transition:all .3s;}
+.auth-close:hover{background:rgba(255,60,60,.2);color:#ff3c3c;}
+.auth-logo{font-family:'Orbitron',sans-serif;font-size:1.5rem;font-weight:900;color:#39ff14;letter-spacing:4px;text-shadow:0 0 15px rgba(57,255,20,.4);margin-bottom:6px;}
+.auth-tabs{display:flex;gap:0;background:rgba(255,255,255,.04);border-radius:12px;padding:4px;margin-top:16px;}
+.auth-tab{flex:1;padding:8px;border-radius:9px;border:none;background:transparent;color:rgba(255,255,255,.45);font-size:.85rem;cursor:pointer;transition:all .3s;font-family:'Tajawal',sans-serif;font-weight:600;}
+.auth-tab.active{background:rgba(57,255,20,.15);color:#39ff14;border:1px solid rgba(57,255,20,.2);}
+.auth-body{padding:28px 32px;}
+.auth-form{display:flex;flex-direction:column;gap:14px;}
+.auth-input-group{display:flex;flex-direction:column;gap:5px;}
+.auth-label-en{font-size:.65rem;color:rgba(255,255,255,.3);direction:ltr;letter-spacing:1px;}
+.auth-label-ar{font-size:.78rem;color:rgba(255,255,255,.5);}
+.auth-input{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 14px;color:#fff;font-size:.9rem;outline:none;transition:all .3s;font-family:'Tajawal',sans-serif;width:100%;}
+.auth-input:focus{border-color:rgba(57,255,20,.4);background:rgba(57,255,20,.03);}
+.auth-input::placeholder{color:rgba(255,255,255,.25);}
+.auth-plan-select{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0;}
+.auth-plan{border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px;cursor:pointer;transition:all .3s;text-align:center;}
+.auth-plan:hover,.auth-plan.selected{border-color:rgba(57,255,20,.4);background:rgba(57,255,20,.06);}
+.auth-plan-price{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:#f5a623;}
+.auth-plan-name-en{font-size:.62rem;color:rgba(255,255,255,.3);direction:ltr;margin-top:2px;}
+.auth-plan-name-ar{font-size:.75rem;color:rgba(255,255,255,.55);}
+.auth-submit{background:linear-gradient(135deg,#39ff14,#00cc66);color:#000;padding:13px;border-radius:24px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;font-family:'Tajawal',sans-serif;letter-spacing:1px;transition:all .3s;width:100%;margin-top:4px;}
+.auth-submit:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(57,255,20,.4);}
+.auth-switch{text-align:center;margin-top:12px;color:rgba(255,255,255,.4);font-size:.82rem;}
+.auth-switch span{color:#39ff14;cursor:pointer;font-weight:700;}
+.auth-switch span:hover{text-decoration:underline;}
+.auth-divider{display:flex;align-items:center;gap:10px;margin:4px 0;}
+.auth-divider hr{flex:1;border:none;border-top:1px solid rgba(255,255,255,.08);}
+.auth-divider span{color:rgba(255,255,255,.3);font-size:.75rem;}
+.no-select{-webkit-user-select:none;user-select:none;}
+.no-download{pointer-events:auto;}
+
+/* ===== LOGGED IN BADGE ===== */
+.user-badge{display:none;align-items:center;gap:8px;background:rgba(57,255,20,.1);border:1px solid rgba(57,255,20,.2);padding:6px 14px;border-radius:20px;cursor:pointer;}
+.user-badge.active{display:flex;}
+.user-badge-name{font-size:.82rem;color:#39ff14;font-weight:700;}
+.user-badge-icon{font-size:1rem;}
+
+/* Disable right click on lesson content */
+.protected-content{-webkit-user-select:none;-moz-user-select:none;user-select:none;}
+</style>
+</head>
+<body>
+<canvas id="sc"></canvas>
+<div class="nb"></div>
+<nav>
+  <div class="nl">GMAZ</div>
+  <ul class="nv">
+    <li><a href="#">الرئيسية</a></li>
+    <li><a href="#">المنتجات</a></li>
+    <li><a href="#">العروض</a></li>
+    <li><a href="#">تواصل معنا</a></li>
+  </ul>
+  <button class="nc" id="navCart" onclick="showAuth('register')">&#x1F6D2; اشترك / Subscribe</button>
+</nav>
+<section class="hero">
+  <div class="hc">
+    <span class="hb">&#10022; مرحباً بك في عالم GMAZ &#10022;</span>
+    <h1 class="ht">GMAZ</h1>
+    <p class="hs">General Management @ Zürich</p>
+    <p class="hd">اكتشف أفضل المنتجات بجودة لا تُضاهى وأسعار استثنائية. تسوق الآن وانضم إلى آلاف العملاء السعداء.</p>
+    <div class="hbt">
+      <button class="bp">تسوق الآن</button>
+      <button class="bs">اكتشف المزيد</button>
+    </div>
+    <div class="hst">
+      <div><div class="sn">500+</div><div class="sl">منتج</div></div>
+      <div><div class="sn">10K+</div><div class="sl">عميل</div></div>
+      <div><div class="sn">4.9&#9733;</div><div class="sl">تقييم</div></div>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="sh">
+    <span class="st">&#10022; مجموعتنا &#10022;</span>
+    <h2 class="sti">أبرز المنتجات</h2>
+    <div class="dv"></div>
+  </div>
+  <div class="pg">
+    <div class="pc"><div class="pi"><span class="pb">جديد</span>&#x1F3AE;</div><div class="pin"><div class="pn">منتج مميز ١</div><div class="pd">أفضل جودة بأفضل سعر — تجربة لا تُنسى</div><div class="pf"><div class="pp">٢٩٩ ر.س</div><button class="ab">أضف للسلة</button></div></div></div>
+    <div class="pc"><div class="pi"><span class="pb">الأكثر مبيعاً</span>&#x231A;</div><div class="pin"><div class="pn">منتج مميز ٢</div><div class="pd">تصميم فاخر يناسب كل الأذواق</div><div class="pf"><div class="pp">١٤٩ ر.س</div><button class="ab">أضف للسلة</button></div></div></div>
+    <div class="pc"><div class="pi"><span class="pb">عرض</span>&#x1F3A7;</div><div class="pin"><div class="pn">منتج مميز ٣</div><div class="pd">جودة صوت استثنائية لتجربة مختلفة</div><div class="pf"><div class="pp">٤٩٩ ر.س</div><button class="ab">أضف للسلة</button></div></div></div>
+    <div class="pc"><div class="pi">&#x1F4BB;</div><div class="pin"><div class="pn">منتج مميز ٤</div><div class="pd">أداء عالي يلبّي جميع احتياجاتك</div><div class="pf"><div class="pp">٩٩٩ ر.س</div><button class="ab">أضف للسلة</button></div></div></div>
+  </div>
+</section>
+
+
+<section class="ai-intro-section">
+  <div class="sh">
+    <span class="st">&#10022; AI for Business &#8212; &#x630;&#x643;&#x627;&#x621; &#x627;&#x644;&#x623;&#x639;&#x645;&#x627;&#x644; &#10022;</span>
+    <h2 class="sti">Transform Your Business with AI</h2>
+    <div class="dv"></div>
+  </div>
+
+  <!-- HERO -->
+  <div class="ai-intro-hero">
+    <div class="ai-intro-tag">&#x1F4BC; AI for Business & Enterprises</div>
+    <div class="ai-intro-title-en">How <span>Artificial Intelligence</span> Transforms the Way Companies Operate</div>
+    <div class="ai-intro-title-ar">&#x643;&#x64A;&#x641; &#x64A;&#x637;&#x648;&#x651;&#x631; <span>&#x627;&#x644;&#x630;&#x643;&#x627;&#x621; &#x627;&#x644;&#x627;&#x635;&#x637;&#x646;&#x627;&#x639;&#x64A;</span> &#x637;&#x631;&#x64A;&#x642;&#x629; &#x639;&#x645;&#x644; &#x627;&#x644;&#x634;&#x631;&#x643;&#x627;&#x62A;</div>
+    <div class="ai-intro-desc-en">AI is no longer a future concept — it's the present competitive advantage. Companies that embrace AI today are 3x more productive, make faster decisions, and deliver better customer experiences than those that don't.</div>
+    <div class="ai-intro-desc-ar">&#x644;&#x645; &#x64A;&#x639;&#x62F; &#x627;&#x644;&#x630;&#x643;&#x627;&#x621; &#x627;&#x644;&#x627;&#x635;&#x637;&#x646;&#x627;&#x639;&#x64A; &#x645;&#x641;&#x647;&#x648;&#x645;&#x627;&#x64B; &#x645;&#x633;&#x62A;&#x642;&#x628;&#x644;&#x64A;&#x627;&#x64B; &#x2014; &#x628;&#x644; &#x647;&#x648; &#x645;&#x64A;&#x632;&#x629; &#x62A;&#x646;&#x627;&#x641;&#x633;&#x64A;&#x629; &#x62D;&#x627;&#x636;&#x631;&#x629;. &#x627;&#x644;&#x634;&#x631;&#x643;&#x627;&#x62A; &#x627;&#x644;&#x62A;&#x64A; &#x62A;&#x639;&#x62A;&#x645;&#x62F; AI &#x627;&#x644;&#x64A;&#x648;&#x645; &#x623;&#x643;&#x62B;&#x631; &#x625;&#x646;&#x62A;&#x627;&#x62C;&#x64A;&#x629;&#x64B; &#x648;&#x623;&#x633;&#x631;&#x639; &#x641;&#x64A; &#x627;&#x62A;&#x62E;&#x627;&#x630; &#x627;&#x644;&#x642;&#x631;&#x627;&#x631;&#x627;&#x62A; &#x648;&#x623;&#x642;&#x648;&#x649; &#x641;&#x64A; &#x62E;&#x62F;&#x645;&#x629; &#x639;&#x645;&#x644;&#x627;&#x626;&#x647;&#x627;.</div>
+    <div class="ai-kpi-row">
+      <div class="ai-kpi"><div class="ai-kpi-num">3x</div><div class="ai-kpi-en">More Productive</div><div class="ai-kpi-ar">&#x623;&#x643;&#x62B;&#x631; &#x625;&#x646;&#x62A;&#x627;&#x62C;&#x64A;&#x629;</div></div>
+      <div class="ai-kpi"><div class="ai-kpi-num">40%</div><div class="ai-kpi-en">Cost Reduction</div><div class="ai-kpi-ar">&#x62A;&#x62E;&#x641;&#x64A;&#x636; &#x627;&#x644;&#x62A;&#x643;&#x627;&#x644;&#x64A;&#x641;</div></div>
+      <div class="ai-kpi"><div class="ai-kpi-num">60%</div><div class="ai-kpi-en">Faster Decisions</div><div class="ai-kpi-ar">&#x633;&#x631;&#x639;&#x629; &#x627;&#x644;&#x642;&#x631;&#x627;&#x631;&#x627;&#x62A;</div></div>
+      <div class="ai-kpi"><div class="ai-kpi-num">85%</div><div class="ai-kpi-en">Customer Satisfaction</div><div class="ai-kpi-ar">&#x631;&#x636;&#x627; &#x627;&#x644;&#x639;&#x645;&#x644;&#x627;&#x621;</div></div>
+      <div class="ai-kpi"><div class="ai-kpi-num">$15T</div><div class="ai-kpi-en">AI Value by 2030</div><div class="ai-kpi-ar">&#x642;&#x64A;&#x645;&#x629; AI &#x628;&#x62D;&#x644;&#x648;&#x644; 2030</div></div>
+    </div>
+  </div>
+
+  <!-- 6 PILLARS -->
+  <div class="sh" style="margin-bottom:36px;">
+    <span class="st">&#10022; 6 Ways AI Transforms Business &#8212; 6 &#x645;&#x62C;&#x627;&#x644;&#x627;&#x62A; &#x62A;&#x62D;&#x648;&#x64A;&#x644; &#10022;</span>
+    <h2 class="sti" style="font-size:1.7rem;">How AI Elevates Every Department</h2>
+  </div>
+  <div class="ai-pillars">
+
+    <div class="ai-pillar p1">
+      <div class="ai-pillar-icon">&#x1F4CA;</div>
+      <div class="ai-pillar-title-en" style="color:#39ff14;">Smart Decision Making</div>
+      <div class="ai-pillar-title-ar">&#x627;&#x62A;&#x62E;&#x627;&#x630; &#x627;&#x644;&#x642;&#x631;&#x627;&#x631;&#x627;&#x62A; &#x627;&#x644;&#x630;&#x643;&#x64A;&#x629;</div>
+      <div class="ai-pillar-en">AI analyzes millions of data points instantly — giving executives real-time insights to make confident, evidence-based decisions.</div>
+      <div class="ai-pillar-ar">&#x64A;&#x62D;&#x644;&#x651;&#x644; AI &#x645;&#x644;&#x627;&#x64A;&#x64A;&#x646; &#x646;&#x642;&#x637;&#x629; &#x628;&#x64A;&#x627;&#x646;&#x627;&#x62A; &#x641;&#x648;&#x631;&#x64A;&#x627;&#x64B; &#x2014; &#x645;&#x645;&#x627; &#x64A;&#x645;&#x646;&#x62D; &#x627;&#x644;&#x645;&#x62F;&#x631;&#x627;&#x621; &#x631;&#x624;&#x64A;&#x629; &#x648;&#x627;&#x636;&#x62D;&#x629; &#x648;&#x642;&#x631;&#x627;&#x631;&#x627;&#x62A; &#x645;&#x628;&#x646;&#x64A;&#x629; &#x639;&#x644;&#x649; &#x628;&#x64A;&#x627;&#x646;&#x627;&#x62A; &#x62D;&#x642;&#x64A;&#x642;&#x64A;&#x629;.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2);">Analytics</span>
+        <span class="ai-tag" style="background:rgba(57,255,20,.1);color:#39ff14;border:1px solid rgba(57,255,20,.2);">&#x62A;&#x62D;&#x644;&#x64A;&#x644; &#x627;&#x644;&#x628;&#x64A;&#x627;&#x646;&#x627;&#x62A;</span>
+      </div>
+    </div>
+
+    <div class="ai-pillar p2">
+      <div class="ai-pillar-icon">&#x1F916;</div>
+      <div class="ai-pillar-title-en" style="color:#00c8ff;">Customer Service Automation</div>
+      <div class="ai-pillar-title-ar">&#x623;&#x62A;&#x645;&#x62A;&#x629; &#x62E;&#x62F;&#x645;&#x629; &#x627;&#x644;&#x639;&#x645;&#x644;&#x627;&#x621;</div>
+      <div class="ai-pillar-en">AI chatbots handle thousands of customer queries 24/7, reduce support costs by 40% and improve satisfaction scores.</div>
+      <div class="ai-pillar-ar">&#x62A;&#x639;&#x627;&#x644;&#x62C; &#x631;&#x648;&#x628;&#x648;&#x62A;&#x627;&#x62A; AI &#x622;&#x644;&#x627;&#x641; &#x627;&#x633;&#x62A;&#x641;&#x633;&#x627;&#x631; &#x627;&#x644;&#x639;&#x645;&#x644;&#x627;&#x621; 24/7 &#x648;&#x62A;&#x62E;&#x641;&#x636; &#x62A;&#x643;&#x627;&#x644;&#x64A;&#x641; &#x627;&#x644;&#x62F;&#x639;&#x645; 40% &#x648;&#x62A;&#x631;&#x641;&#x639; &#x631;&#x636;&#x627; &#x627;&#x644;&#x639;&#x645;&#x644;&#x627;&#x621; &#x628;&#x634;&#x643;&#x644; &#x645;&#x644;&#x62D;&#x648;&#x638;.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(0,200,255,.1);color:#00c8ff;border:1px solid rgba(0,200,255,.2);">Chatbot</span>
+        <span class="ai-tag" style="background:rgba(0,200,255,.1);color:#00c8ff;border:1px solid rgba(0,200,255,.2);">&#x62F;&#x639;&#x645; &#x630;&#x643;&#x64A;</span>
+      </div>
+    </div>
+
+    <div class="ai-pillar p3">
+      <div class="ai-pillar-icon">&#x1F4E6;</div>
+      <div class="ai-pillar-title-en" style="color:#ffa600;">Supply Chain Optimization</div>
+      <div class="ai-pillar-title-ar">&#x62A;&#x62D;&#x633;&#x64A;&#x646; &#x633;&#x644;&#x627;&#x633;&#x644; &#x627;&#x644;&#x62A;&#x648;&#x631;&#x64A;&#x62F;</div>
+      <div class="ai-pillar-en">Predict demand, automate inventory management and reduce waste by up to 30% using AI-powered forecasting models.</div>
+      <div class="ai-pillar-ar">&#x62A;&#x646;&#x628;&#x624; &#x628;&#x627;&#x644;&#x637;&#x644;&#x628; &#x648;&#x623;&#x62A;&#x645;&#x62A; &#x625;&#x62F;&#x627;&#x631;&#x629; &#x627;&#x644;&#x645;&#x62E;&#x632;&#x648;&#x646; &#x648;&#x642;&#x644;&#x644; &#x627;&#x644;&#x647;&#x62F;&#x631; 30% &#x628;&#x627;&#x633;&#x62A;&#x62E;&#x62F;&#x627;&#x645; &#x646;&#x645;&#x627;&#x630;&#x62C; &#x627;&#x644;&#x62A;&#x646;&#x628;&#x624; &#x627;&#x644;&#x630;&#x643;&#x64A;&#x629;.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(255,166,0,.1);color:#ffa600;border:1px solid rgba(255,166,0,.2);">Forecasting</span>
+        <span class="ai-tag" style="background:rgba(255,166,0,.1);color:#ffa600;border:1px solid rgba(255,166,0,.2);">&#x644;&#x648;&#x62C;&#x633;&#x62A;&#x64A;&#x643;</span>
+      </div>
+    </div>
+
+    <div class="ai-pillar p4">
+      <div class="ai-pillar-icon">&#x1F4B3;</div>
+      <div class="ai-pillar-title-en" style="color:#c864ff;">Finance & Fraud Detection</div>
+      <div class="ai-pillar-title-ar">&#x627;&#x644;&#x645;&#x627;&#x644;&#x64A;&#x629; &#x648;&#x643;&#x634;&#x641; &#x627;&#x644;&#x627;&#x62D;&#x62A;&#x64A;&#x627;&#x644;</div>
+      <div class="ai-pillar-en">AI detects fraudulent transactions in milliseconds, automates financial reporting and ensures regulatory compliance.</div>
+      <div class="ai-pillar-ar">&#x64A;&#x643;&#x634;&#x641; AI &#x627;&#x644;&#x645;&#x639;&#x627;&#x645;&#x644;&#x627;&#x62A; &#x627;&#x644;&#x627;&#x62D;&#x62A;&#x64A;&#x627;&#x644;&#x64A;&#x629; &#x641;&#x648;&#x631;&#x627;&#x64B; &#x648;&#x64A;&#x624;&#x62A;&#x645;&#x62A; &#x627;&#x644;&#x62A;&#x642;&#x627;&#x631;&#x64A;&#x631; &#x627;&#x644;&#x645;&#x627;&#x644;&#x64A;&#x629; &#x648;&#x64A;&#x636;&#x645;&#x646; &#x627;&#x644;&#x627;&#x645;&#x62A;&#x62B;&#x627;&#x644; &#x627;&#x644;&#x62A;&#x646;&#x638;&#x64A;&#x645;&#x64A; &#x62A;&#x644;&#x642;&#x627;&#x626;&#x64A;&#x627;&#x64B;.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(200,100,255,.1);color:#c864ff;border:1px solid rgba(200,100,255,.2);">FinTech</span>
+        <span class="ai-tag" style="background:rgba(200,100,255,.1);color:#c864ff;border:1px solid rgba(200,100,255,.2);">&#x623;&#x645;&#x627;&#x646; &#x645;&#x627;&#x644;&#x64A;</span>
+      </div>
+    </div>
+
+    <div class="ai-pillar p5">
+      <div class="ai-pillar-icon">&#x1F465;</div>
+      <div class="ai-pillar-title-en" style="color:#ff6eb4;">HR & Talent Management</div>
+      <div class="ai-pillar-title-ar">&#x627;&#x644;&#x645;&#x648;&#x627;&#x631;&#x62F; &#x627;&#x644;&#x628;&#x634;&#x631;&#x64A;&#x629; &#x648;&#x625;&#x62F;&#x627;&#x631;&#x629; &#x627;&#x644;&#x645;&#x648;&#x627;&#x647;&#x628;</div>
+      <div class="ai-pillar-en">Screen thousands of CVs in seconds, predict employee performance, and reduce hiring time by 50% with AI recruitment tools.</div>
+      <div class="ai-pillar-ar">&#x641;&#x631;&#x632; &#x622;&#x644;&#x627;&#x641; &#x627;&#x644;&#x633;&#x64A;&#x631; &#x627;&#x644;&#x630;&#x627;&#x62A;&#x64A;&#x629; &#x641;&#x64A; &#x62B;&#x648;&#x627;&#x646; &#x648;&#x62A;&#x646;&#x628;&#x624; &#x628;&#x623;&#x62F;&#x627;&#x621; &#x627;&#x644;&#x645;&#x648;&#x638;&#x641;&#x64A;&#x646; &#x648;&#x642;&#x644;&#x644; &#x648;&#x642;&#x62A; &#x627;&#x644;&#x62A;&#x648;&#x638;&#x64A;&#x641; 50%.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(255,110,180,.1);color:#ff6eb4;border:1px solid rgba(255,110,180,.2);">Recruitment AI</span>
+        <span class="ai-tag" style="background:rgba(255,110,180,.1);color:#ff6eb4;border:1px solid rgba(255,110,180,.2);">&#x62A;&#x648;&#x638;&#x64A;&#x641; &#x630;&#x643;&#x64A;</span>
+      </div>
+    </div>
+
+    <div class="ai-pillar p6">
+      <div class="ai-pillar-icon">&#x1F4E3;</div>
+      <div class="ai-pillar-title-en" style="color:#00ffd5;">Marketing & Personalization</div>
+      <div class="ai-pillar-title-ar">&#x627;&#x644;&#x62A;&#x633;&#x648;&#x64A;&#x642; &#x648;&#x627;&#x644;&#x62A;&#x62E;&#x635;&#x64A;&#x635;</div>
+      <div class="ai-pillar-en">Create hyper-personalized campaigns, predict customer behavior and boost conversion rates by up to 70% using AI marketing tools.</div>
+      <div class="ai-pillar-ar">&#x623;&#x646;&#x634;&#x626; &#x62D;&#x645;&#x644;&#x627;&#x62A; &#x62A;&#x633;&#x648;&#x64A;&#x642;&#x64A;&#x629; &#x645;&#x62E;&#x635;&#x635;&#x629; &#x628;&#x627;&#x644;&#x643;&#x627;&#x645;&#x644; &#x648;&#x62A;&#x646;&#x628;&#x623; &#x628;&#x633;&#x644;&#x648;&#x643; &#x627;&#x644;&#x639;&#x645;&#x644;&#x627;&#x621; &#x648;&#x636;&#x627;&#x639;&#x641; &#x645;&#x639;&#x62F;&#x644;&#x627;&#x62A; &#x627;&#x644;&#x62A;&#x62D;&#x648;&#x64A;&#x644; 70%.</div>
+      <div class="ai-pillar-tags">
+        <span class="ai-tag" style="background:rgba(0,255,213,.1);color:#00ffd5;border:1px solid rgba(0,255,213,.2);">Personalization</span>
+        <span class="ai-tag" style="background:rgba(0,255,213,.1);color:#00ffd5;border:1px solid rgba(0,255,213,.2);">&#x62A;&#x633;&#x648;&#x64A;&#x642; &#x630;&#x643;&#x64A;</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROADMAP STEPS -->
+  <div class="ai-steps">
+    <div class="ai-steps-title-en">The AI Transformation Roadmap</div>
+    <div class="ai-steps-title-ar">&#x62E;&#x627;&#x631;&#x637;&#x629; &#x637;&#x631;&#x64A;&#x642; &#x62A;&#x62D;&#x648;&#x64A;&#x644; &#x634;&#x631;&#x643;&#x62A;&#x643; &#x628;&#x627;&#x644;&#x630;&#x643;&#x627;&#x621; &#x627;&#x644;&#x627;&#x635;&#x637;&#x646;&#x627;&#x639;&#x64A;</div>
+    <div class="ai-steps-list">
+      <div class="ai-step">
+        <div class="ai-step-circle" style="background:rgba(57,255,20,.1);border-color:#39ff14;color:#39ff14;">01</div>
+        <div class="ai-step-en">Assess & Plan</div>
+        <div class="ai-step-ar">&#x62A;&#x642;&#x64A;&#x64A;&#x645; &#x648;&#x62A;&#x62E;&#x637;&#x64A;&#x637;</div>
+      </div>
+      <div class="ai-step">
+        <div class="ai-step-circle" style="background:rgba(0,200,255,.1);border-color:#00c8ff;color:#00c8ff;">02</div>
+        <div class="ai-step-en">Build Data Foundation</div>
+        <div class="ai-step-ar">&#x628;&#x646;&#x627;&#x621; &#x642;&#x627;&#x639;&#x62F;&#x629; &#x627;&#x644;&#x628;&#x64A;&#x627;&#x646;&#x627;&#x62A;</div>
+      </div>
+      <div class="ai-step">
+        <div class="ai-step-circle" style="background:rgba(255,166,0,.1);border-color:#ffa600;color:#ffa600;">03</div>
+        <div class="ai-step-en">Pilot AI Solutions</div>
+        <div class="ai-step-ar">&#x62A;&#x646;&#x641;&#x64A;&#x630; &#x646;&#x645;&#x627;&#x630;&#x62C; &#x623;&#x648;&#x644;&#x64A;&#x629;</div>
+      </div>
+      <div class="ai-step">
+        <div class="ai-step-circle" style="background:rgba(200,100,255,.1);border-color:#c864ff;color:#c864ff;">04</div>
+        <div class="ai-step-en">Train Your Team</div>
+        <div class="ai-step-ar">&#x62A;&#x62F;&#x631;&#x64A;&#x628; &#x641;&#x631;&#x64A;&#x642;&#x643;</div>
+      </div>
+      <div class="ai-step">
+        <div class="ai-step-circle" style="background:rgba(255,60,60,.1);border-color:#ff3c3c;color:#ff3c3c;">05</div>
+        <div class="ai-step-en">Scale & Optimize</div>
+        <div class="ai-step-ar">&#x62A;&#x648;&#x633;&#x639; &#x648;&#x62A;&#x637;&#x648;&#x64A;&#x631;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ai-cta" style="margin-top:48px;">
+    <div class="ai-cta-en">Ready to Transform Your Business?</div>
+    <div class="ai-cta-ar">&#x647;&#x644; &#x623;&#x646;&#x62A; &#x645;&#x633;&#x62A;&#x639;&#x62F; &#x644;&#x62A;&#x62D;&#x648;&#x64A;&#x644; &#x634;&#x631;&#x643;&#x62A;&#x643;&#x61F;</div>
+    <div class="ai-cta-sub-en">Start with our AI courses and discover how to apply intelligence to every part of your business.</div>
+    <div class="ai-cta-sub-ar">&#x627;&#x628;&#x62F;&#x623; &#x628;&#x62F;&#x648;&#x631;&#x627;&#x62A; AI &#x644;&#x62F;&#x64A;&#x646;&#x627; &#x648;&#x627;&#x643;&#x62A;&#x634;&#x641; &#x643;&#x64A;&#x641; &#x62A;&#x637;&#x628;&#x651;&#x642; &#x627;&#x644;&#x630;&#x643;&#x627;&#x621; &#x641;&#x64A; &#x643;&#x644; &#x62C;&#x632;&#x621; &#x645;&#x646; &#x623;&#x639;&#x645;&#x627;&#x644;&#x643;.</div>
+    <div class="ai-cta-btns">
+      <button class="ai-cta-btn1">&#x1F680; &#x627;&#x628;&#x62F;&#x623; &#x627;&#x644;&#x622;&#x646; / Start Now</button>
+      <button class="ai-cta-btn2">&#x1F4CB; &#x62A;&#x648;&#x627;&#x635;&#x644; &#x645;&#x639;&#x646;&#x627; / Contact Us</button>
+    </div>
+  </div>
+
+</section>
+<section class="courses">
+  <div class="sh">
+    <span class="st">&#10022; تعلّم الذكاء الاصطناعي &#10022;</span>
+    <h2 class="sti">دورات AI المتدرجة</h2>
+    <div class="dv"></div>
+  </div>
+  <div class="course-grid">
+
+    <div class="course-card">
+      <div class="course-num">01</div>
+      <div class="course-top">
+        <span class="course-icon">&#x1F916;</span>
+        <span class="course-level lv1">مبتدئ</span>
+        <div class="course-title">مقدمة في الذكاء الاصطناعي</div>
+        <div class="course-desc">ابدأ رحلتك من الصفر — تعرّف على مفاهيم AI الأساسية بأسلوب بسيط وممتع</div>
+      </div>
+      <div class="course-bottom">
+        <ul class="course-topics">
+          <li>ما هو الذكاء الاصطناعي؟</li>
+          <li>تاريخ AI وتطوره</li>
+          <li>أنواع الذكاء الاصطناعي</li>
+          <li>تطبيقات AI في الحياة اليومية</li>
+        </ul>
+        <div class="pbar"><div class="pfill" style="width:20%;background:linear-gradient(90deg,#39ff14,#00cc66)"></div></div>
+        <div class="course-footer">
+          <span class="cduration">&#9201; 4 ساعات</span>
+          <button class="cbtn cbtn1" onclick="openLesson(0)">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-num">02</div>
+      <div class="course-top">
+        <span class="course-icon">&#x1F9E0;</span>
+        <span class="course-level lv2">أساسي</span>
+        <div class="course-title">تعلّم الآلة Machine Learning</div>
+        <div class="course-desc">اكتشف كيف تتعلم الآلات من البيانات وتتخذ القرارات تلقائياً</div>
+      </div>
+      <div class="course-bottom">
+        <ul class="course-topics">
+          <li>أنواع التعلم الآلي</li>
+          <li>الخوارزميات الأساسية</li>
+          <li>تحليل البيانات</li>
+          <li>بناء أول نموذج تنبؤي</li>
+        </ul>
+        <div class="pbar"><div class="pfill" style="width:40%;background:linear-gradient(90deg,#00c8ff,#0077ff)"></div></div>
+        <div class="course-footer">
+          <span class="cduration">&#9201; 8 ساعات</span>
+          <button class="cbtn cbtn2" onclick="openLesson(1)">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-num">03</div>
+      <div class="course-top">
+        <span class="course-icon">&#x1F52C;</span>
+        <span class="course-level lv3">متوسط</span>
+        <div class="course-title">الشبكات العصبية Neural Networks</div>
+        <div class="course-desc">ادخل عالم الشبكات العصبية العميقة وافهم كيف تحاكي عقل الإنسان</div>
+      </div>
+      <div class="course-bottom">
+        <ul class="course-topics">
+          <li>بنية الشبكات العصبية</li>
+          <li>التعلم العميق Deep Learning</li>
+          <li>معالجة الصور والصوت</li>
+          <li>تطبيقات عملية مع Python</li>
+        </ul>
+        <div class="pbar"><div class="pfill" style="width:60%;background:linear-gradient(90deg,#ffa600,#ff6600)"></div></div>
+        <div class="course-footer">
+          <span class="cduration">&#9201; 12 ساعة</span>
+          <button class="cbtn cbtn3" onclick="openLesson(2)">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-num">04</div>
+      <div class="course-top">
+        <span class="course-icon">&#x1F4AC;</span>
+        <span class="course-level lv4">متقدم</span>
+        <div class="course-title">نماذج اللغة الكبيرة LLMs</div>
+        <div class="course-desc">تعمّق في عالم ChatGPT وClaude وبناء تطبيقات ذكاء اصطناعي محادثي</div>
+      </div>
+      <div class="course-bottom">
+        <ul class="course-topics">
+          <li>كيف تعمل نماذج اللغة</li>
+          <li>Prompt Engineering احترافي</li>
+          <li>استخدام APIs الذكاء الاصطناعي</li>
+          <li>بناء chatbot خاص بك</li>
+        </ul>
+        <div class="pbar"><div class="pfill" style="width:80%;background:linear-gradient(90deg,#c864ff,#8800ff)"></div></div>
+        <div class="course-footer">
+          <span class="cduration">&#9201; 16 ساعة</span>
+          <button class="cbtn cbtn4" onclick="openLesson(3)">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-num">05</div>
+      <div class="course-top">
+        <span class="course-icon">&#x1F680;</span>
+        <span class="course-level lv5">خبير</span>
+        <div class="course-title">بناء مشاريع AI حقيقية</div>
+        <div class="course-desc">المرحلة النهائية — طبّق كل ما تعلمته في مشاريع AI احترافية جاهزة للسوق</div>
+      </div>
+      <div class="course-bottom">
+        <ul class="course-topics">
+          <li>تصميم نظام AI من الصفر</li>
+          <li>النشر على السحابة Cloud</li>
+          <li>تحسين الأداء والدقة</li>
+          <li>مشروع تخرج احترافي</li>
+        </ul>
+        <div class="pbar"><div class="pfill" style="width:100%;background:linear-gradient(90deg,#ff3c3c,#ff0000)"></div></div>
+        <div class="course-footer">
+          <span class="cduration">&#9201; 20 ساعة</span>
+          <button class="cbtn cbtn5" onclick="openLesson(4)">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="office-section">
+  <div class="sh">
+    <span class="st">&#10022; حلول الإنتاجية &#10022;</span>
+    <h2 class="sti">Microsoft Office</h2>
+    <div class="dv"></div>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div class="office-hero">
+    <div class="office-hero-title">أتقن <span>Microsoft Office</span> وارتقِ بعملك</div>
+    <p class="office-hero-sub">دليلك الشامل لاستخدام برامج Office الاحترافية — سواء كنت فرداً يبحث عن تطوير مهاراته أو شركة تسعى لرفع إنتاجية فريقها</p>
+    <div class="office-badges">
+      <span class="office-badge badge-blue">&#x1F3E2; للشركات والمؤسسات</span>
+      <span class="office-badge badge-green">&#x1F464; للأفراد والموظفين</span>
+      <span class="office-badge badge-gold">&#x1F393; شهادة معتمدة</span>
+      <span class="office-badge badge-blue">&#127760; متاح أونلاين</span>
+    </div>
+    <div class="office-cta-btns">
+      <button class="office-btn-main">&#x2B07; حمّل الدليل الكامل مجاناً</button>
+      <button class="office-btn-sec">&#x25B6; شاهد الدروس</button>
+    </div>
+  </div>
+
+  <!-- APPS GRID -->
+  <div class="sh" style="margin-bottom:36px;">
+    <span class="st">&#10022; تفاصيل البرامج &#10022;</span>
+    <h2 class="sti" style="font-size:1.8rem;">كل تطبيق وما يقدمه</h2>
+  </div>
+
+  <div class="office-apps-grid">
+
+    <!-- WORD -->
+    <div class="office-app-card" style="border-color:rgba(0,90,255,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-word">&#x1F4C4;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#4da6ff;">Word</div>
+          <div class="app-tagline">معالجة النصوص الاحترافية</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li style="color:#4da6ff66;">كتابة التقارير والعقود والمراسلات الرسمية</li>
+          <li>تصميم قوالب الشركات والخطابات</li>
+          <li>إنشاء السير الذاتية والمستندات الاحترافية</li>
+          <li>دمج البريد للتواصل الجماعي</li>
+          <li>مراجعة المستندات والتعليقات التشاركية</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(0,90,255,.15);color:#4da6ff;border:1px solid rgba(0,90,255,.3);">أساسي ← متقدم</span>
+          <button class="app-dl-btn" style="background:rgba(0,90,255,.15);color:#4da6ff;border:1px solid rgba(0,90,255,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXCEL -->
+    <div class="office-app-card" style="border-color:rgba(0,160,70,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-excel">&#x1F4CA;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#4dff91;">Excel</div>
+          <div class="app-tagline">تحليل البيانات والجداول</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>إدارة الميزانيات والتقارير المالية</li>
+          <li>تحليل بيانات المبيعات والأداء</li>
+          <li>إنشاء لوحات متابعة Dashboard</li>
+          <li>الصيغ المتقدمة VLOOKUP و PivotTable</li>
+          <li>أتمتة المهام المتكررة بـ Macros</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(0,160,70,.15);color:#4dff91;border:1px solid rgba(0,160,70,.3);">أساسي ← خبير</span>
+          <button class="app-dl-btn" style="background:rgba(0,160,70,.15);color:#4dff91;border:1px solid rgba(0,160,70,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- POWERPOINT -->
+    <div class="office-app-card" style="border-color:rgba(210,60,20,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-ppt">&#x1F4F9;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#ff7a50;">PowerPoint</div>
+          <div class="app-tagline">العروض التقديمية المؤثرة</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>تصميم عروض المبيعات والمؤتمرات</li>
+          <li>إنشاء تقارير الشركات المرئية</li>
+          <li>خطط الأعمال وعروض المستثمرين</li>
+          <li>قوالب احترافية للتدريب</li>
+          <li>تأثيرات الحركة والانتقالات الديناميكية</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(210,60,20,.15);color:#ff7a50;border:1px solid rgba(210,60,20,.3);">مبتدئ ← متقدم</span>
+          <button class="app-dl-btn" style="background:rgba(210,60,20,.15);color:#ff7a50;border:1px solid rgba(210,60,20,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTLOOK -->
+    <div class="office-app-card" style="border-color:rgba(0,100,200,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-outlook">&#x2709;&#xFE0F;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#5cb8ff;">Outlook</div>
+          <div class="app-tagline">إدارة البريد والمواعيد</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>إدارة البريد الإلكتروني المؤسسي</li>
+          <li>جدولة الاجتماعات والمواعيد</li>
+          <li>مشاركة التقاويم مع الفريق</li>
+          <li>قواعد البريد التلقائية والفلترة</li>
+          <li>التكامل مع Teams و SharePoint</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(0,100,200,.15);color:#5cb8ff;border:1px solid rgba(0,100,200,.3);">أساسي ← متقدم</span>
+          <button class="app-dl-btn" style="background:rgba(0,100,200,.15);color:#5cb8ff;border:1px solid rgba(0,100,200,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAMS -->
+    <div class="office-app-card" style="border-color:rgba(80,60,200,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-teams">&#x1F91D;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#9985ff;">Teams</div>
+          <div class="app-tagline">التعاون والعمل عن بُعد</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>اجتماعات الفيديو والمكالمات الجماعية</li>
+          <li>قنوات الفريق والتواصل الفوري</li>
+          <li>مشاركة الملفات والتحرير المشترك</li>
+          <li>إدارة مشاريع الفريق</li>
+          <li>التكامل مع تطبيقات Office كاملة</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(80,60,200,.15);color:#9985ff;border:1px solid rgba(80,60,200,.3);">مبتدئ ← متقدم</span>
+          <button class="app-dl-btn" style="background:rgba(80,60,200,.15);color:#9985ff;border:1px solid rgba(80,60,200,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCESS -->
+    <div class="office-app-card" style="border-color:rgba(160,20,100,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-access">&#x1F5C4;&#xFE0F;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#ff6eb4;">Access</div>
+          <div class="app-tagline">قواعد البيانات المؤسسية</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>بناء قواعد بيانات العملاء والمخزون</li>
+          <li>نماذج إدخال البيانات الاحترافية</li>
+          <li>تقارير مخصصة لإدارة الأعمال</li>
+          <li>ربط البيانات مع Excel وSQL</li>
+          <li>أتمتة العمليات التجارية الداخلية</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(160,20,100,.15);color:#ff6eb4;border:1px solid rgba(160,20,100,.3);">متوسط ← خبير</span>
+          <button class="app-dl-btn" style="background:rgba(160,20,100,.15);color:#ff6eb4;border:1px solid rgba(160,20,100,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONENOTE -->
+    <div class="office-app-card" style="border-color:rgba(130,50,200,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-onenote">&#x1F4DD;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#b87fff;">OneNote</div>
+          <div class="app-tagline">تنظيم الملاحظات والأفكار</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>تدوين ملاحظات الاجتماعات الرقمية</li>
+          <li>تنظيم مشاريع الفريق والأفكار</li>
+          <li>دفاتر ملاحظات مشتركة للشركات</li>
+          <li>دمج الصور والصوت والروابط</li>
+          <li>التزامن الفوري مع جميع الأجهزة</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(130,50,200,.15);color:#b87fff;border:1px solid rgba(130,50,200,.3);">مبتدئ ← متقدم</span>
+          <button class="app-dl-btn" style="background:rgba(130,50,200,.15);color:#b87fff;border:1px solid rgba(130,50,200,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHAREPOINT -->
+    <div class="office-app-card" style="border-color:rgba(0,130,80,.2);">
+      <div class="app-header">
+        <div class="app-icon icon-sharepoint">&#x1F310;</div>
+        <div class="app-title-block">
+          <div class="app-name" style="color:#4dffb4;">SharePoint</div>
+          <div class="app-tagline">بوابة الشركة الرقمية</div>
+        </div>
+      </div>
+      <div class="app-body">
+        <ul class="app-uses">
+          <li>إنشاء موقع داخلي للشركة Intranet</li>
+          <li>مشاركة الوثائق والملفات المؤسسية</li>
+          <li>إدارة محتوى الفريق بصلاحيات متقدمة</li>
+          <li>أتمتة سير العمل Workflow</li>
+          <li>التكامل مع Teams وOffice 365</li>
+        </ul>
+        <div class="app-footer">
+          <span class="app-level" style="background:rgba(0,130,80,.15);color:#4dffb4;border:1px solid rgba(0,130,80,.3);">متوسط ← خبير</span>
+          <button class="app-dl-btn" style="background:rgba(0,130,80,.15);color:#4dffb4;border:1px solid rgba(0,130,80,.3);">تعلّم الآن</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PLANS -->
+  <div class="sh" style="margin-bottom:36px;margin-top:20px;">
+    <span class="st">&#10022; الباقات &#10022;</span>
+    <h2 class="sti" style="font-size:1.8rem;">اختر باقتك المناسبة</h2>
+  </div>
+
+  <div class="plans-grid">
+
+    <div class="plan-card">
+      <div class="plan-icon">&#x1F464;</div>
+      <div class="plan-name">فردي</div>
+      <div class="plan-audience">للأفراد والمستقلين</div>
+      <div class="plan-price">٩٩ <span>ر.س / شهر</span></div>
+      <ul class="plan-features">
+        <li>Word + Excel + PowerPoint</li>
+        <li>Outlook + OneNote</li>
+        <li>1 TB تخزين سحابي</li>
+        <li>دروس تفاعلية كاملة</li>
+        <li>شهادة إتمام</li>
+      </ul>
+      <button class="plan-btn" style="background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.2);">ابدأ مجاناً</button>
+    </div>
+
+    <div class="plan-card featured">
+      <div class="plan-badge">&#x2B50; الأكثر طلباً</div>
+      <div class="plan-icon" style="margin-top:20px;">&#x1F3E2;</div>
+      <div class="plan-name" style="color:#39ff14;">شركات</div>
+      <div class="plan-audience">للفرق والمؤسسات</div>
+      <div class="plan-price">٢٩٩ <span>ر.س / شهر</span></div>
+      <ul class="plan-features">
+        <li>جميع تطبيقات Office 365</li>
+        <li>Teams + SharePoint + Access</li>
+        <li>حسابات غير محدودة للفريق</li>
+        <li>تدريب مخصص للشركة</li>
+        <li>دعم فني 24/7</li>
+        <li>شهادات معتمدة للموظفين</li>
+      </ul>
+      <button class="plan-btn" style="background:linear-gradient(135deg,#39ff14,#00cc66);color:#000;border:none;">احصل عليها الآن</button>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-icon">&#x1F3AF;</div>
+      <div class="plan-name">مؤسسي</div>
+      <div class="plan-audience">للمؤسسات الكبرى</div>
+      <div class="plan-price">مخصص</div>
+      <ul class="plan-features">
+        <li>كل مزايا باقة الشركات</li>
+        <li>تدريب ميداني على الموقع</li>
+        <li>حلول مخصصة للمؤسسة</li>
+        <li>مدير حساب مخصص</li>
+        <li>SLA مضمون 99.9%</li>
+      </ul>
+      <button class="plan-btn" style="background:rgba(245,166,35,.12);color:#f5a623;border:1px solid rgba(245,166,35,.3);">تواصل معنا</button>
+    </div>
+
+  </div>
+</section>
+<footer>
+  <div class="fl">GMAZ</div>
+  <div class="fn">General Management @Z&#252;rich</div>
+  <p class="ft">&#169; 2025 GMAZ &#8212; جميع الحقوق محفوظة</p>
+</footer>
+<script>
+const canvas=document.getElementById('sc');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+const SC=[
+  '#ffffff','#fffbe6','#ffd580','#ff9f43','#ff6b35','#ff4444',
+  '#ff8c00','#ffe066','#a0c4ff','#7ec8e3','#00d4ff','#88ff88',
+  '#ffaaaa','#ffd700','#ff7700','#ccffcc','#ff5500','#ffcc00',
+  '#80bfff','#ff3300','#ffb347','#c8a2c8','#87ceeb','#ffa07a'
+];
+const stars=[];
+for(let i=0;i<700;i++){
+  const rb=Math.random()<0.70;
+  const x=rb?canvas.width*0.42+Math.random()*canvas.width*0.58:Math.random()*canvas.width*0.58;
+  stars.push({x,y:Math.random()*canvas.height,
+    r:Math.random()<0.04?Math.random()*2.5+1.5:Math.random()*1.1+0.25,
+    c:SC[Math.floor(Math.random()*SC.length)],
+    a:Math.random()*0.55+0.45,ts:Math.random()*0.02+0.004,
+    to:Math.random()*Math.PI*2,br:Math.random()<0.035,sp:Math.random()<0.012});
+}
+for(let i=0;i<80;i++){
+  stars.push({x:canvas.width*0.76+(Math.random()-0.5)*180,
+    y:canvas.height*0.17+(Math.random()-0.5)*110,
+    r:Math.random()*1.4+0.3,
+    c:['#ffd580','#ff9f43','#ffe066','#ffcc00','#ffffff','#ffb347'][Math.floor(Math.random()*6)],
+    a:Math.random()*0.5+0.5,ts:Math.random()*0.025+0.008,
+    to:Math.random()*Math.PI*2,br:false,sp:false});
+}
+for(let i=0;i<7;i++){
+  stars.push({x:canvas.width*0.5+Math.random()*canvas.width*0.45,
+    y:Math.random()*canvas.height,
+    r:Math.random()*1.5+1,c:SC[Math.floor(Math.random()*SC.length)],
+    a:0.9,ts:0.008,to:Math.random()*Math.PI*2,br:true,sp:true});
+}
+function dsp(x,y,r,c,a){
+  ctx.save();ctx.globalAlpha=a;
+  const out=r*7,inn=r*0.8;
+  ctx.beginPath();
+  for(let s=0;s<8;s++){const rad=(s*Math.PI)/4;const rr=s%2===0?out:inn;
+    s===0?ctx.moveTo(x+Math.cos(rad)*rr,y+Math.sin(rad)*rr):ctx.lineTo(x+Math.cos(rad)*rr,y+Math.sin(rad)*rr);}
+  ctx.closePath();
+  const g=ctx.createRadialGradient(x,y,0,x,y,out);
+  g.addColorStop(0,c);g.addColorStop(1,'transparent');
+  ctx.fillStyle=g;ctx.fill();ctx.restore();
+}
+let frame=0;
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);frame++;
+  stars.forEach(s=>{
+    const tw=0.5+0.5*Math.sin(frame*s.ts+s.to);
+    const a=s.a*(0.45+0.55*tw);
+    if(s.sp){dsp(s.x,s.y,s.r,s.c,a);return;}
+    if(s.br){
+      const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*10);
+      g.addColorStop(0,s.c+'bb');g.addColorStop(1,'transparent');
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r*10,0,Math.PI*2);
+      ctx.fillStyle=g;ctx.globalAlpha=a*0.45;ctx.fill();
+    }
+    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=s.c;ctx.globalAlpha=a;ctx.fill();ctx.globalAlpha=1;
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+</script>
+<div id="aiModalOverlay" class="ai-modal-overlay" onclick="if(event.target===this)closeModal()"></div>
+<script>
+const aiLessons = [
+  {
+    num: "LESSON 01",
+    titleEn: "Introduction to Artificial Intelligence",
+    titleAr: "مقدمة في الذكاء الاصطناعي",
+    level: "Beginner / مبتدئ",
+    levelColor: "#39ff14",
+    duration: "4 Hours / 4 ساعات",
+    icon: "🤖",
+    blocks: [
+      {
+        titleEn: "1. WHAT IS ARTIFICIAL INTELLIGENCE?",
+        titleAr: "١. ما هو الذكاء الاصطناعي؟",
+        contentEn: "Artificial Intelligence (AI) is the simulation of human intelligence processes by machines — especially computer systems. These processes include learning, reasoning, and self-correction.",
+        contentAr: "الذكاء الاصطناعي هو محاكاة الآلات لقدرات العقل البشري — من التعلم والتفكير المنطقي وحل المشكلات. إنه مجال علم الحاسوب الذي يهدف إلى بناء أنظمة قادرة على أداء مهام تتطلب عادةً ذكاءً بشرياً.",
+        points: [
+          { en: "AI systems learn from data and improve over time", ar: "أنظمة الذكاء الاصطناعي تتعلم من البيانات وتتحسن بمرور الوقت" },
+          { en: "AI can process information millions of times faster than humans", ar: "يعالج AI المعلومات أسرع من الإنسان بملايين المرات" },
+          { en: "AI is already embedded in daily tools: Google, Siri, Netflix", ar: "AI مدمج بالفعل في أدواتنا اليومية: جوجل وسيري ونتفليكس" },
+        ]
+      },
+      {
+        titleEn: "2. HISTORY & EVOLUTION OF AI",
+        titleAr: "٢. تاريخ الذكاء الاصطناعي وتطوره",
+        contentEn: "AI was born in 1956 at the Dartmouth Conference. Since then it passed through 'AI Winters' and major breakthroughs — from chess-playing machines to today's generative AI revolution.",
+        contentAr: "وُلد الذكاء الاصطناعي رسمياً عام 1956 في مؤتمر دارتموث. مرّ بحقب من التراجع وفترات انتعاش — من آلات الشطرنج إلى ثورة الذكاء الاصطناعي التوليدي التي نعيشها اليوم.",
+        points: [
+          { en: "1956: Birth of AI at Dartmouth Conference", ar: "1956: ولادة AI في مؤتمر دارتموث" },
+          { en: "1997: Deep Blue defeats world chess champion Kasparov", ar: "1997: Deep Blue يهزم بطل الشطرنج كاسباروف" },
+          { en: "2023: ChatGPT reaches 100M users in 2 months — fastest in history", ar: "2023: ChatGPT يصل لـ 100 مليون مستخدم في شهرين — الأسرع في التاريخ" },
+        ]
+      },
+      {
+        titleEn: "3. TYPES OF ARTIFICIAL INTELLIGENCE",
+        titleAr: "٣. أنواع الذكاء الاصطناعي",
+        contentEn: "AI is classified into three main types based on capability: Narrow AI (what we use today), General AI (human-level intelligence), and Super AI (hypothetical future AI exceeding human intellect).",
+        contentAr: "يُصنَّف الذكاء الاصطناعي إلى ثلاثة أنواع رئيسية: الضيق (ما نستخدمه اليوم)، العام (مستوى ذكاء الإنسان)، والخارق (مستقبلي يتجاوز العقل البشري).",
+        points: [
+          { en: "Narrow AI: Specialized tasks — Siri, face recognition, spam filters", ar: "الضيق: مهام محددة — سيري، التعرف على الوجوه، فلاتر البريد" },
+          { en: "General AI: Human-level reasoning across all domains (not yet achieved)", ar: "العام: تفكير كالإنسان في كل المجالات (لم يتحقق بعد)" },
+          { en: "Super AI: Surpasses human intelligence in every field (theoretical)", ar: "الخارق: يتفوق على الإنسان في كل شيء (نظري حتى الآن)" },
+        ]
+      },
+      {
+        titleEn: "4. AI IN EVERYDAY LIFE",
+        titleAr: "٤. الذكاء الاصطناعي في حياتنا اليومية",
+        contentEn: "You interact with AI dozens of times a day without realizing it — from your phone's face unlock, to Netflix recommendations, to the auto-complete in your email.",
+        contentAr: "تتفاعل مع الذكاء الاصطناعي عشرات المرات يومياً دون أن تدرك — من فتح هاتفك بالوجه، لتوصيات نتفليكس، لإكمال الجمل تلقائياً في بريدك الإلكتروني.",
+        points: [
+          { en: "Smartphones: Face ID, voice assistants, predictive text", ar: "الهواتف الذكية: Face ID وأسستانت وإكمال النص" },
+          { en: "Healthcare: AI detects cancer in scans faster than doctors", ar: "الرعاية الصحية: AI يكشف السرطان في الأشعة أسرع من الأطباء" },
+          { en: "Finance: Fraud detection, robo-advisors, credit scoring", ar: "المالية: كشف الاحتيال والمستشارون الآليون وتقييم الائتمان" },
+        ]
+      }
+    ],
+    quiz: {
+      qEn: "Which type of AI do we use today in applications like Siri and Google?",
+      qAr: "ما نوع الذكاء الاصطناعي الذي نستخدمه اليوم في تطبيقات مثل سيري وجوجل؟",
+      options: [
+        { text: "Super AI / الذكاء الخارق", correct: false },
+        { text: "General AI / الذكاء العام", correct: false },
+        { text: "Narrow AI / الذكاء الضيق ✓", correct: true },
+        { text: "Quantum AI / الذكاء الكمومي", correct: false },
+      ]
+    }
+  },
+  {
+    num: "LESSON 02",
+    titleEn: "Machine Learning",
+    titleAr: "تعلّم الآلة",
+    level: "Basic / أساسي",
+    levelColor: "#00c8ff",
+    duration: "8 Hours / 8 ساعات",
+    icon: "🧠",
+    blocks: [
+      {
+        titleEn: "1. WHAT IS MACHINE LEARNING?",
+        titleAr: "١. ما هو تعلّم الآلة؟",
+        contentEn: "Machine Learning is a subset of AI where systems automatically learn and improve from experience without being explicitly programmed. Instead of writing rules, you feed data and the machine discovers the patterns itself.",
+        contentAr: "تعلّم الآلة هو فرع من AI حيث تتعلم الأنظمة وتتحسن تلقائياً من التجربة دون برمجة صريحة. بدلاً من كتابة القواعد، تُغذّي النظام بالبيانات فيكتشف الأنماط بنفسه.",
+        points: [
+          { en: "ML systems improve automatically with more data", ar: "تتحسن أنظمة ML تلقائياً كلما زادت البيانات" },
+          { en: "Used in: spam detection, product recommendations, price prediction", ar: "تُستخدم في: كشف البريد المزعج، التوصيات، توقع الأسعار" },
+          { en: "Core difference from traditional programming: data → rules (not rules → output)", ar: "الفرق الجوهري: البيانات تُنتج القواعد (عكس البرمجة التقليدية)" },
+        ]
+      },
+      {
+        titleEn: "2. TYPES OF MACHINE LEARNING",
+        titleAr: "٢. أنواع تعلّم الآلة",
+        contentEn: "There are three main learning paradigms: Supervised Learning (labeled data), Unsupervised Learning (finding hidden patterns), and Reinforcement Learning (learning by reward and penalty).",
+        contentAr: "ثلاثة أنواع رئيسية: التعلم بالإشراف (بيانات مصنّفة)، وبدون إشراف (اكتشاف أنماط خفية)، والتعلم التعزيزي (التعلم بالمكافأة والعقوبة).",
+        points: [
+          { en: "Supervised: Email spam filter — learns from labeled 'spam/not spam' examples", ar: "بالإشراف: فلتر البريد — يتعلم من أمثلة مصنّفة spam/not spam" },
+          { en: "Unsupervised: Customer segmentation — groups similar customers automatically", ar: "بلا إشراف: تجميع العملاء — يُصنّف العملاء المتشابهين تلقائياً" },
+          { en: "Reinforcement: AlphaGo — learned to beat world champions by playing millions of games", ar: "التعزيزي: AlphaGo — تعلّم هزيمة الأبطال بلعب ملايين المباريات" },
+        ]
+      },
+      {
+        titleEn: "3. KEY ALGORITHMS",
+        titleAr: "٣. أهم الخوارزميات",
+        contentEn: "ML algorithms are the mathematical engines behind predictions. Each algorithm has strengths for specific types of problems — from linear regression for number prediction to decision trees for classification.",
+        contentAr: "خوارزميات ML هي المحركات الرياضية وراء التنبؤات. كل خوارزمية لها قوة في نوع معين من المشاكل.",
+        points: [
+          { en: "Linear Regression: Predicts continuous values (house prices, sales)", ar: "الانحدار الخطي: يتنبأ بقيم متواصلة (أسعار البيوت، المبيعات)" },
+          { en: "Decision Trees: Yes/No branching decisions — easy to visualize", ar: "شجرة القرار: قرارات نعم/لا متفرعة — سهلة التصور" },
+          { en: "Neural Networks: Inspired by the human brain — powers deep learning", ar: "الشبكات العصبية: مستوحاة من الدماغ البشري — تُشغّل التعلم العميق" },
+        ]
+      },
+      {
+        titleEn: "4. BUILD YOUR FIRST PREDICTIVE MODEL",
+        titleAr: "٤. ابنِ أول نموذج تنبؤي",
+        contentEn: "In this hands-on section, you will use Python and scikit-learn to build a simple model that predicts house prices based on size and location — your first real ML project.",
+        contentAr: "في هذا الجزء التطبيقي، ستستخدم Python وscikit-learn لبناء نموذج بسيط يتنبأ بأسعار المنازل بناءً على المساحة والموقع — أول مشروع ML حقيقي لك.",
+        points: [
+          { en: "Step 1: Collect and clean your dataset", ar: "الخطوة 1: جمع البيانات وتنظيفها" },
+          { en: "Step 2: Choose and train your ML algorithm", ar: "الخطوة 2: اختيار الخوارزمية وتدريبها" },
+          { en: "Step 3: Test accuracy and deploy your model", ar: "الخطوة 3: اختبار الدقة ونشر النموذج" },
+        ]
+      }
+    ],
+    quiz: {
+      qEn: "Which type of ML learns by receiving rewards and penalties?",
+      qAr: "أي نوع من تعلّم الآلة يتعلم من خلال المكافآت والعقوبات؟",
+      options: [
+        { text: "Supervised Learning / التعلم بالإشراف", correct: false },
+        { text: "Unsupervised Learning / التعلم بلا إشراف", correct: false },
+        { text: "Transfer Learning / التعلم بالنقل", correct: false },
+        { text: "Reinforcement Learning / التعلم التعزيزي ✓", correct: true },
+      ]
+    }
+  },
+  {
+    num: "LESSON 03",
+    titleEn: "Neural Networks & Deep Learning",
+    titleAr: "الشبكات العصبية والتعلم العميق",
+    level: "Intermediate / متوسط",
+    levelColor: "#ffa600",
+    duration: "12 Hours / 12 ساعة",
+    icon: "🔬",
+    blocks: [
+      {
+        titleEn: "1. STRUCTURE OF NEURAL NETWORKS",
+        titleAr: "١. بنية الشبكات العصبية",
+        contentEn: "Neural networks are inspired by the biological brain. They consist of layers of interconnected 'neurons' that process and pass signals — input layer receives data, hidden layers process it, output layer delivers the answer.",
+        contentAr: "الشبكات العصبية مستوحاة من الدماغ البيولوجي. تتكون من طبقات من الخلايا العصبية المترابطة — طبقة الإدخال تستقبل البيانات، الطبقات الخفية تعالجها، وطبقة الإخراج تعطي الإجابة.",
+        points: [
+          { en: "Input Layer: Receives raw data (pixels, text, numbers)", ar: "طبقة الإدخال: تستقبل البيانات الخام (بكسلات، نص، أرقام)" },
+          { en: "Hidden Layers: Extract features and patterns from data", ar: "الطبقات الخفية: تستخرج الخصائص والأنماط من البيانات" },
+          { en: "Output Layer: Produces the final prediction or classification", ar: "طبقة الإخراج: تُنتج التنبؤ أو التصنيف النهائي" },
+        ]
+      },
+      {
+        titleEn: "2. DEEP LEARNING",
+        titleAr: "٢. التعلم العميق",
+        contentEn: "Deep Learning is ML with many hidden layers — enabling computers to recognize complex patterns like faces, speech, and language with superhuman accuracy.",
+        contentAr: "التعلم العميق هو ML بطبقات خفية كثيرة — يُمكّن الحواسيب من التعرف على أنماط معقدة كالوجوه والكلام واللغة بدقة تفوق الإنسان.",
+        points: [
+          { en: "Image recognition: Identifies objects in photos with 99% accuracy", ar: "التعرف على الصور: يُعرّف الأشياء بدقة 99%" },
+          { en: "Speech recognition: Powers Alexa, Siri, Google Assistant", ar: "التعرف على الكلام: يُشغّل أليكسا وسيري وجوجل أسستانت" },
+          { en: "Language translation: Google Translate processes 100+ languages", ar: "ترجمة اللغات: جوجل ترانسليت يعالج أكثر من 100 لغة" },
+        ]
+      },
+      {
+        titleEn: "3. REAL-WORLD APPLICATIONS",
+        titleAr: "٣. تطبيقات في العالم الحقيقي",
+        contentEn: "Deep learning powers the most impressive AI applications today — from self-driving cars to medical diagnosis to creative AI that generates images and text.",
+        contentAr: "التعلم العميق يُشغّل أبرز تطبيقات AI اليوم — من السيارات ذاتية القيادة إلى التشخيص الطبي إلى AI الإبداعي الذي يُنشئ الصور والنصوص.",
+        points: [
+          { en: "Self-driving cars: Tesla's Autopilot processes camera feeds in real-time", ar: "السيارات ذاتية القيادة: أوتوبايلوت تسلا يعالج كاميرات آنياً" },
+          { en: "Medical AI: Detects diabetic retinopathy from eye scans", ar: "الطب: يكشف اعتلال الشبكية السكري من صور العين" },
+          { en: "Generative AI: DALL-E, Midjourney, ChatGPT, Claude", ar: "AI التوليدي: DALL-E وMidjourney وChatGPT وكلود" },
+        ]
+      },
+      {
+        titleEn: "4. HANDS-ON: PYTHON PROJECT",
+        titleAr: "٤. تطبيقي: مشروع Python",
+        contentEn: "Build a simple image classifier using TensorFlow and Keras that can distinguish between cats and dogs — a classic deep learning project that teaches core concepts.",
+        contentAr: "ابنِ مصنّف صور بسيط باستخدام TensorFlow وKeras يُميّز بين القطط والكلاب — مشروع تعلم عميق كلاسيكي يُعلّم المفاهيم الجوهرية.",
+        points: [
+          { en: "Load and preprocess image dataset (10,000 images)", ar: "تحميل مجموعة الصور ومعالجتها (10,000 صورة)" },
+          { en: "Build a Convolutional Neural Network (CNN)", ar: "بناء شبكة عصبية التفافية CNN" },
+          { en: "Train, evaluate and improve model accuracy", ar: "تدريب النموذج وتقييمه وتحسين دقته" },
+        ]
+      }
+    ],
+    quiz: {
+      qEn: "What makes 'Deep Learning' different from standard Machine Learning?",
+      qAr: "ما الذي يُميّز التعلم العميق عن تعلّم الآلة العادي؟",
+      options: [
+        { text: "It uses more data / يستخدم بيانات أكثر", correct: false },
+        { text: "It uses many hidden layers / يستخدم طبقات خفية كثيرة ✓", correct: true },
+        { text: "It runs faster / يعمل بسرعة أكبر", correct: false },
+        { text: "It needs no training / لا يحتاج تدريباً", correct: false },
+      ]
+    }
+  },
+  {
+    num: "LESSON 04",
+    titleEn: "Large Language Models (LLMs)",
+    titleAr: "نماذج اللغة الكبيرة",
+    level: "Advanced / متقدم",
+    levelColor: "#c864ff",
+    duration: "16 Hours / 16 ساعة",
+    icon: "💬",
+    blocks: [
+      {
+        titleEn: "1. HOW LLMs WORK",
+        titleAr: "١. كيف تعمل نماذج اللغة الكبيرة",
+        contentEn: "LLMs like ChatGPT and Claude are trained on hundreds of billions of text tokens from the internet. They learn statistical patterns in language — predicting what word comes next to generate coherent, intelligent responses.",
+        contentAr: "نماذج اللغة الكبيرة كـ ChatGPT وكلود تتدرب على مئات المليارات من الكلمات من الإنترنت. تتعلم الأنماط الإحصائية في اللغة — تتنبأ بالكلمة التالية لتوليد ردود متماسكة وذكية.",
+        points: [
+          { en: "GPT-4 trained on ~1 trillion tokens of text data", ar: "GPT-4 تدرّب على ~تريليون رمز من البيانات النصية" },
+          { en: "Transformer architecture enables understanding context over long text", ar: "معمارية Transformer تُمكّن فهم السياق في النصوص الطويلة" },
+          { en: "Fine-tuning adapts base models for specific tasks", ar: "الضبط الدقيق يُكيّف النماذج الأساسية لمهام محددة" },
+        ]
+      },
+      {
+        titleEn: "2. PROMPT ENGINEERING",
+        titleAr: "٢. هندسة الأوامر",
+        contentEn: "Prompt Engineering is the art of crafting effective instructions for AI models. The quality of your prompt directly determines the quality of the AI's output — it's the new superpower for knowledge workers.",
+        contentAr: "هندسة الأوامر هي فن صياغة التعليمات الفعّالة لنماذج AI. جودة أمرك تُحدد مباشرةً جودة ناتج AI — إنها القوة الجديدة لعمال المعرفة.",
+        points: [
+          { en: "Be specific: 'Write a 200-word product description for X targeting Y'", ar: "كن محدداً: 'اكتب وصف منتج 200 كلمة لـ X يستهدف Y'" },
+          { en: "Use examples (few-shot prompting) to guide the model's style", ar: "استخدم أمثلة (few-shot) لتوجيه أسلوب النموذج" },
+          { en: "Chain-of-thought: Ask AI to 'think step by step' for complex tasks", ar: "سلسلة الأفكار: اطلب من AI التفكير خطوة بخطوة في المهام المعقدة" },
+        ]
+      },
+      {
+        titleEn: "3. USING AI APIS",
+        titleAr: "٣. استخدام واجهات برمجة AI",
+        contentEn: "APIs allow you to integrate AI capabilities directly into your applications. OpenAI, Anthropic, and Google all offer APIs that let you build AI-powered products with just a few lines of code.",
+        contentAr: "تتيح لك واجهات API دمج قدرات AI مباشرةً في تطبيقاتك. OpenAI وAnthropic وGoogle توفر APIs تُمكّنك من بناء منتجات مدعومة بـ AI ببضعة أسطر من الكود.",
+        points: [
+          { en: "REST APIs: Send text, receive AI-generated response in milliseconds", ar: "APIs الـ REST: أرسل نصاً، استقبل رداً من AI في ميلي ثانية" },
+          { en: "Embeddings: Convert text to vectors for semantic search", ar: "التضمينات: حوّل النص لمتجهات للبحث الدلالي" },
+          { en: "Function calling: Let AI trigger actions in your app", ar: "استدعاء الوظائف: اسمح لـ AI بتشغيل إجراءات في تطبيقك" },
+        ]
+      },
+      {
+        titleEn: "4. BUILD YOUR OWN CHATBOT",
+        titleAr: "٤. ابنِ روبوت محادثة خاصاً بك",
+        contentEn: "In this final project, you will build a fully functional AI chatbot using the Claude or OpenAI API — customized for a specific business use case of your choice.",
+        contentAr: "في هذا المشروع النهائي، ستبني روبوت محادثة وظيفياً كاملاً باستخدام API كلود أو OpenAI — مُخصصاً لحالة استخدام تجارية من اختيارك.",
+        points: [
+          { en: "Design the system prompt to define your chatbot's personality", ar: "صمّم نظام الأمر لتحديد شخصية روبوت المحادثة" },
+          { en: "Build the frontend interface with HTML/CSS/JavaScript", ar: "ابنِ واجهة المستخدم الأمامية بـ HTML/CSS/JS" },
+          { en: "Connect to AI API and handle conversation history", ar: "اربط بـ API وأدر تاريخ المحادثة" },
+        ]
+      }
+    ],
+    quiz: {
+      qEn: "What is 'Prompt Engineering'?",
+      qAr: "ما هي 'هندسة الأوامر'؟",
+      options: [
+        { text: "Building the AI model itself / بناء نموذج AI", correct: false },
+        { text: "Writing effective instructions for AI / صياغة تعليمات فعّالة لـ AI ✓", correct: true },
+        { text: "Fixing AI bugs / إصلاح أخطاء AI", correct: false },
+        { text: "Training the AI on new data / تدريب AI على بيانات جديدة", correct: false },
+      ]
+    }
+  },
+  {
+    num: "LESSON 05",
+    titleEn: "Build Real AI Projects",
+    titleAr: "بناء مشاريع AI حقيقية",
+    level: "Expert / خبير",
+    levelColor: "#ff3c3c",
+    duration: "20 Hours / 20 ساعة",
+    icon: "🚀",
+    blocks: [
+      {
+        titleEn: "1. DESIGN AN AI SYSTEM FROM SCRATCH",
+        titleAr: "١. تصميم نظام AI من الصفر",
+        contentEn: "Great AI projects start with a well-defined problem. Learn how to identify business opportunities for AI, define success metrics, and architect a solution that actually works in production.",
+        contentAr: "المشاريع العظيمة تبدأ بمشكلة محددة جيداً. تعلّم كيف تُحدد الفرص التجارية لـ AI وتضع مقاييس النجاح وتُصمّم حلاً يعمل فعلياً في بيئة الإنتاج.",
+        points: [
+          { en: "Problem definition: What exactly should the AI solve?", ar: "تحديد المشكلة: ما الذي يجب أن يحلّه AI بالضبط؟" },
+          { en: "Data strategy: What data do you need and where to get it?", ar: "استراتيجية البيانات: ما البيانات التي تحتاجها وأين تجدها؟" },
+          { en: "Architecture: Choose between cloud AI, open-source, or custom model", ar: "المعمارية: اختر بين AI السحابي أو المفتوح المصدر أو النموذج المخصص" },
+        ]
+      },
+      {
+        titleEn: "2. CLOUD DEPLOYMENT",
+        titleAr: "٢. النشر على السحابة",
+        contentEn: "Build once, deploy everywhere. Learn to deploy AI models on AWS, Google Cloud, or Azure — making your AI available to millions of users with auto-scaling and high availability.",
+        contentAr: "ابنِ مرة، انشر في كل مكان. تعلّم نشر نماذج AI على AWS وGoogle Cloud وAzure — اجعل AI متاحاً لملايين المستخدمين مع التوسع التلقائي.",
+        points: [
+          { en: "Containerize your AI model with Docker", ar: "ضع نموذجك في حاوية Docker" },
+          { en: "Deploy as REST API on cloud platforms", ar: "انشره كـ REST API على منصات السحابة" },
+          { en: "Monitor performance, costs and model drift", ar: "راقب الأداء والتكاليف وانجراف النموذج" },
+        ]
+      },
+      {
+        titleEn: "3. PERFORMANCE OPTIMIZATION",
+        titleAr: "٣. تحسين الأداء والدقة",
+        contentEn: "A deployed model is just the beginning. Learn techniques to improve accuracy, reduce latency and make your AI more efficient — including fine-tuning, RAG and model compression.",
+        contentAr: "النموذج المنشور مجرد بداية. تعلّم تقنيات تحسين الدقة وتقليل التأخير وجعل AI أكثر كفاءة — بما يشمل الضبط الدقيق وRAG وضغط النماذج.",
+        points: [
+          { en: "Fine-tuning: Adapt a pretrained model to your specific domain", ar: "الضبط الدقيق: كيّف نموذجاً مسبق التدريب لمجالك المحدد" },
+          { en: "RAG: Retrieval-Augmented Generation for up-to-date knowledge", ar: "RAG: التوليد المعزز بالاسترجاع للمعرفة المحدّثة" },
+          { en: "Quantization: Reduce model size by 4x with minimal accuracy loss", ar: "التكميم: قلّل حجم النموذج 4x مع خسارة دقة ضئيلة" },
+        ]
+      },
+      {
+        titleEn: "4. FINAL GRADUATION PROJECT",
+        titleAr: "٤. مشروع التخرج النهائي",
+        contentEn: "Your capstone project: Build a complete, production-ready AI application — from idea to deployment. Present it to peers and receive expert feedback.",
+        contentAr: "مشروع التخرج: ابنِ تطبيق AI كاملاً جاهزاً للإنتاج — من الفكرة إلى النشر. قدّمه وتلقَّ تغذية راجعة من الخبراء.",
+        points: [
+          { en: "Choose a real problem from your industry or interest", ar: "اختر مشكلة حقيقية من مجالك أو اهتمامك" },
+          { en: "Build a complete MVP with AI at its core", ar: "ابنِ MVP كامل مع AI في جوهره" },
+          { en: "Deploy publicly and share your project with the world", ar: "انشر علناً وشارك مشروعك مع العالم" },
+        ]
+      }
+    ],
+    quiz: {
+      qEn: "What is 'RAG' in the context of AI?",
+      qAr: "ما هو 'RAG' في سياق الذكاء الاصطناعي؟",
+      options: [
+        { text: "Random Access Generation / توليد عشوائي", correct: false },
+        { text: "Retrieval-Augmented Generation / التوليد المعزز بالاسترجاع ✓", correct: true },
+        { text: "Rapid AI Generation / توليد AI سريع", correct: false },
+        { text: "Recurrent AI Graph / رسم AI متكرر", correct: false },
+      ]
+    }
+  }
+];
+
+let currentLesson = 0;
+
+function openLesson(idx) {
+  currentLesson = idx;
+  renderModal(idx);
+  document.getElementById('aiModalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('aiModalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function renderModal(idx) {
+  const L = aiLessons[idx];
+  const overlay = document.getElementById('aiModalOverlay');
+
+  let blocksHTML = L.blocks.map(b => `
+    <div class="ai-lesson-block">
+      <div class="ai-lesson-block-title" style="color:${L.levelColor}">${b.titleEn}</div>
+      <div class="ai-lesson-block-title-ar">${b.titleAr}</div>
+      <div class="ai-lesson-block-divider"></div>
+      <div class="ai-content-en">${b.contentEn}</div>
+      <div class="ai-content-ar">${b.contentAr}</div>
+      <ul class="ai-points">
+        ${b.points.map(p=>`<li><div class="ai-point-en">${p.en}</div><div class="ai-point-ar">${p.ar}</div></li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
+
+  let quizHTML = `
+    <div class="ai-quiz">
+      <div class="ai-quiz-title-en">LESSON QUIZ</div>
+      <div class="ai-quiz-title-ar">اختبر فهمك</div>
+      <div class="ai-quiz-q-en">${L.quiz.qEn}</div>
+      <div class="ai-quiz-q-ar">${L.quiz.qAr}</div>
+      <div class="ai-quiz-options">
+        ${L.quiz.options.map((o,i)=>`<div class="ai-quiz-opt" onclick="checkAnswer(this,${o.correct})">${o.text}</div>`).join('')}
+      </div>
+    </div>
+  `;
+
+  overlay.innerHTML = `
+    <div class="ai-modal">
+      <div class="ai-modal-header">
+        <button class="ai-modal-close" onclick="closeModal()">✕</button>
+        <div class="ai-modal-lesson-num">${L.num}</div>
+        <div class="ai-modal-title-en">${L.icon} ${L.titleEn}</div>
+        <div class="ai-modal-title-ar">${L.titleAr}</div>
+        <div class="ai-modal-meta">
+          <span class="ai-modal-badge" style="background:rgba(${L.levelColor=='#39ff14'?'57,255,20':L.levelColor=='#00c8ff'?'0,200,255':L.levelColor=='#ffa600'?'255,166,0':L.levelColor=='#c864ff'?'200,100,255':'255,60,60'},.12);color:${L.levelColor};border:1px solid ${L.levelColor}44">${L.level}</span>
+          <span class="ai-modal-badge" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)">⏱ ${L.duration}</span>
+        </div>
+      </div>
+      <div class="ai-modal-body">
+        ${blocksHTML}
+        ${quizHTML}
+      </div>
+      <div class="ai-modal-footer">
+        <button class="ai-prev-btn" onclick="prevLesson()" ${idx===0?'style="opacity:.3;cursor:default"':''}>&#x2190; السابق / Prev</button>
+        <span style="font-family:'Orbitron',sans-serif;font-size:.75rem;color:rgba(255,255,255,.3);">${idx+1} / ${aiLessons.length}</span>
+        <button class="ai-next-btn" onclick="nextLesson()" ${idx===aiLessons.length-1?'style="opacity:.5;cursor:default"':''}>التالي / Next &#x2192;</button>
+      </div>
+    </div>
+  `;
+}
+
+function checkAnswer(el, correct) {
+  const opts = el.parentElement.querySelectorAll('.ai-quiz-opt');
+  opts.forEach(o => o.style.pointerEvents='none');
+  el.classList.add(correct ? 'correct' : 'wrong');
+  if (!correct) {
+    opts.forEach(o => { if(o.textContent.includes('✓')) o.classList.add('correct'); });
+  }
+}
+
+function nextLesson() {
+  if (currentLesson < aiLessons.length - 1) { currentLesson++; renderModal(currentLesson); document.getElementById('aiModalOverlay').scrollTop=0; }
+}
+function prevLesson() {
+  if (currentLesson > 0) { currentLesson--; renderModal(currentLesson); document.getElementById('aiModalOverlay').scrollTop=0; }
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+</script>
+
+<!-- AUTH MODAL -->
+<div id="authOverlay" class="auth-overlay" onclick="if(event.target===this)closeAuth()">
+  <div class="auth-modal">
+    <div class="auth-header">
+      <button class="auth-close" onclick="closeAuth()">✕</button>
+      <div class="auth-logo">GMAZ</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:2px;">General Management @ Zürich</div>
+      <div class="auth-tabs" style="margin-top:16px;">
+        <button class="auth-tab active" id="tab_login" onclick="switchAuthTab('login')">تسجيل الدخول / Login</button>
+        <button class="auth-tab" id="tab_register" onclick="switchAuthTab('register')">اشتراك / Subscribe</button>
+      </div>
+    </div>
+    <div class="auth-body">
+
+      <!-- LOGIN FORM -->
+      <div id="form_login" class="auth-form" style="display:flex;">
+        <div class="auth-input-group">
+          <span class="auth-label-en">EMAIL ADDRESS</span>
+          <span class="auth-label-ar">البريد الإلكتروني</span>
+          <input id="log_email" class="auth-input" type="email" placeholder="example@email.com" dir="ltr">
+        </div>
+        <div class="auth-input-group">
+          <span class="auth-label-en">PASSWORD</span>
+          <span class="auth-label-ar">كلمة المرور</span>
+          <input id="log_pass" class="auth-input" type="password" placeholder="••••••••" dir="ltr">
+        </div>
+        <button class="auth-submit" onclick="doLogin()">🔑 دخول / Login</button>
+        <div class="auth-switch">ليس لديك حساب؟ <span onclick="switchAuthTab('register')">اشترك الآن / Subscribe</span></div>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="form_register" class="auth-form" style="display:none;">
+        <div class="auth-input-group">
+          <span class="auth-label-en">FULL NAME</span>
+          <span class="auth-label-ar">الاسم الكامل</span>
+          <input id="reg_name" class="auth-input" type="text" placeholder="اسمك الكامل / Your Full Name">
+        </div>
+        <div class="auth-input-group">
+          <span class="auth-label-en">EMAIL ADDRESS</span>
+          <span class="auth-label-ar">البريد الإلكتروني</span>
+          <input id="reg_email" class="auth-input" type="email" placeholder="example@email.com" dir="ltr">
+        </div>
+        <div class="auth-input-group">
+          <span class="auth-label-en">PASSWORD</span>
+          <span class="auth-label-ar">كلمة المرور</span>
+          <input id="reg_pass" class="auth-input" type="password" placeholder="••••••••" dir="ltr">
+        </div>
+        <div class="auth-input-group">
+          <span class="auth-label-en">CHOOSE YOUR PLAN</span>
+          <span class="auth-label-ar">اختر باقتك</span>
+          <div class="auth-plan-select">
+            <div class="auth-plan selected" data-plan="individual" onclick="selectPlan(this)">
+              <div class="auth-plan-price">99 ر.س</div>
+              <div class="auth-plan-name-en">Individual / month</div>
+              <div class="auth-plan-name-ar">فردي / شهر</div>
+            </div>
+            <div class="auth-plan" data-plan="company" onclick="selectPlan(this)">
+              <div class="auth-plan-price">299 ر.س</div>
+              <div class="auth-plan-name-en">Business / month</div>
+              <div class="auth-plan-name-ar">شركات / شهر</div>
+            </div>
+          </div>
+        </div>
+        <button class="auth-submit" onclick="doRegister()">✅ اشترك الآن / Subscribe Now</button>
+        <div class="auth-switch">لديك حساب؟ <span onclick="switchAuthTab('login')">سجّل دخولك / Login</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== AUTH STATE =====
+let currentUser = null;
+
+function showAuth(mode) {
+  document.getElementById('authOverlay').classList.add('active');
+  switchAuthTab(mode || 'login');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAuth() {
+  document.getElementById('authOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function switchAuthTab(tab) {
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab_' + tab).classList.add('active');
+  document.getElementById('form_login').style.display = tab === 'login' ? 'flex' : 'none';
+  document.getElementById('form_register').style.display = tab === 'register' ? 'flex' : 'none';
+}
+
+function selectPlan(el) {
+  document.querySelectorAll('.auth-plan').forEach(p => p.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function doRegister() {
+  const name = document.getElementById('reg_name').value.trim();
+  const email = document.getElementById('reg_email').value.trim();
+  const pass = document.getElementById('reg_pass').value;
+  if (!name || !email || !pass) { alert('يرجى تعبئة جميع الحقول'); return; }
+  const plan = document.querySelector('.auth-plan.selected')?.dataset.plan || 'individual';
+  currentUser = { name, email, plan };
+  loginSuccess();
+}
+
+function doLogin() {
+  const email = document.getElementById('log_email').value.trim();
+  const pass = document.getElementById('log_pass').value;
+  if (!email || !pass) { alert('يرجى تعبئة جميع الحقول'); return; }
+  currentUser = { name: email.split('@')[0], email, plan: 'individual' };
+  loginSuccess();
+}
+
+function loginSuccess() {
+  closeAuth();
+  document.getElementById('navUserBadge').classList.add('active');
+  document.getElementById('navUserName').textContent = currentUser.name;
+  document.getElementById('navCart').style.display = 'none';
+  // Reopen lesson if was trying to open
+  if (pendingLesson !== null) { openLesson(pendingLesson); pendingLesson = null; }
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById('navUserBadge').classList.remove('active');
+  document.getElementById('navCart').style.display = '';
+  closeModal();
+}
+
+let pendingLesson = null;
+
+// Override openLesson to check auth
+const _origOpen = window.openLesson;
+window.openLesson = function(idx) {
+  currentLesson = idx;
+  renderModalFreemium(idx);
+  document.getElementById('aiModalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+
+function renderModalFreemium(idx) {
+  const L = aiLessons[idx];
+  const isLoggedIn = currentUser !== null;
+  const overlay = document.getElementById('aiModalOverlay');
+
+  // Free preview: only first block shown
+  const freeBlock = L.blocks[0];
+  let freeHTML = `
+    <div class="free-preview">
+      <div class="free-badge">🆓 Free Preview / معاينة مجانية</div>
+      <div class="free-preview-en">You're viewing the free introduction. Subscribe to unlock all ${L.blocks.length} sections + quiz.</div>
+      <div class="free-preview-ar">أنت تشاهد المقدمة المجانية. اشترك لفتح جميع الـ ${L.blocks.length} أقسام + الاختبار.</div>
+    </div>
+    <div class="ai-lesson-block protected-content">
+      <div class="ai-lesson-block-title" style="color:${L.levelColor}">${freeBlock.titleEn}</div>
+      <div class="ai-lesson-block-title-ar">${freeBlock.titleAr}</div>
+      <div class="ai-lesson-block-divider"></div>
+      <div class="ai-content-en">${freeBlock.contentEn}</div>
+      <div class="ai-content-ar">${freeBlock.contentAr}</div>
+      <ul class="ai-points">
+        ${freeBlock.points.map(p=>`<li><div class="ai-point-en">${p.en}</div><div class="ai-point-ar">${p.ar}</div></li>`).join('')}
+      </ul>
+    </div>
+  `;
+
+  // Locked or unlocked remaining blocks
+  let restHTML = '';
+  if (isLoggedIn) {
+    restHTML = L.blocks.slice(1).map(b => `
+      <div class="ai-lesson-block protected-content no-select">
+        <div class="ai-lesson-block-title" style="color:${L.levelColor}">${b.titleEn}</div>
+        <div class="ai-lesson-block-title-ar">${b.titleAr}</div>
+        <div class="ai-lesson-block-divider"></div>
+        <div class="ai-content-en">${b.contentEn}</div>
+        <div class="ai-content-ar">${b.contentAr}</div>
+        <ul class="ai-points">
+          ${b.points.map(p=>`<li><div class="ai-point-en">${p.en}</div><div class="ai-point-ar">${p.ar}</div></li>`).join('')}
+        </ul>
+      </div>
+    `).join('');
+
+    // Quiz
+    restHTML += `
+      <div class="ai-quiz no-select">
+        <div class="ai-quiz-title-en">LESSON QUIZ</div>
+        <div class="ai-quiz-title-ar">اختبر فهمك</div>
+        <div class="ai-quiz-q-en">${L.quiz.qEn}</div>
+        <div class="ai-quiz-q-ar">${L.quiz.qAr}</div>
+        <div class="ai-quiz-options">
+          ${L.quiz.options.map(o=>`<div class="ai-quiz-opt" onclick="checkAnswer(this,${o.correct})">${o.text}</div>`).join('')}
+        </div>
+      </div>
+    `;
+  } else {
+    restHTML = `
+      <div class="lock-gate">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title-en">PREMIUM CONTENT LOCKED</div>
+        <div class="lock-title-ar">هذا المحتوى حصري للمشتركين</div>
+        <div class="lock-desc-en">Subscribe to unlock ${L.blocks.length - 1} more sections, the quiz, and all 5 lessons. View-only — no downloads.</div>
+        <div class="lock-desc-ar">اشترك لفتح ${L.blocks.length - 1} أقسام إضافية والاختبار وجميع الدروس الخمسة. مشاهدة فقط — بدون تحميل.</div>
+        <div class="lock-btns">
+          <button class="lock-btn-register" onclick="closeModal();showAuth('register')">📝 اشترك الآن / Subscribe</button>
+          <button class="lock-btn-login" onclick="closeModal();showAuth('login')">🔑 تسجيل الدخول / Login</button>
+        </div>
+      </div>
+    `;
+  }
+
+  const userInfo = isLoggedIn ? `<span style="font-size:.75rem;color:#39ff14;font-family:'Orbitron',sans-serif;">✓ ${currentUser.name}</span>` : '';
+
+  overlay.innerHTML = `
+    <div class="ai-modal" oncontextmenu="return false;">
+      <div class="ai-modal-header">
+        <button class="ai-modal-close" onclick="closeModal()">✕</button>
+        <div class="ai-modal-lesson-num">${L.num} ${userInfo}</div>
+        <div class="ai-modal-title-en">${L.icon} ${L.titleEn}</div>
+        <div class="ai-modal-title-ar">${L.titleAr}</div>
+        <div class="ai-modal-meta">
+          <span class="ai-modal-badge" style="background:rgba(57,255,20,.1);color:${L.levelColor};border:1px solid ${L.levelColor}44">${L.level}</span>
+          <span class="ai-modal-badge" style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)">⏱ ${L.duration}</span>
+          ${isLoggedIn ? '<span class="ai-modal-badge" style="background:rgba(57,255,20,.12);color:#39ff14;border:1px solid rgba(57,255,20,.3)">✓ مفتوح / Unlocked</span>' : '<span class="ai-modal-badge" style="background:rgba(255,166,0,.1);color:#ffa600;border:1px solid rgba(255,166,0,.3)">🆓 مجاني جزئياً / Partial Free</span>'}
+        </div>
+      </div>
+      <div class="ai-modal-body">
+        ${freeHTML}
+        ${restHTML}
+      </div>
+      <div class="ai-modal-footer">
+        <button class="ai-prev-btn" onclick="prevLesson()" ${idx===0?'style="opacity:.3;cursor:default"':''}>&#x2190; السابق</button>
+        <span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);">${idx+1} / ${aiLessons.length}</span>
+        <button class="ai-next-btn" onclick="nextLesson()" ${idx===aiLessons.length-1?'style="opacity:.5;cursor:default"':''}>التالي &#x2192;</button>
+      </div>
+    </div>
+  `;
+
+  // Disable right-click & keyboard shortcuts on modal
+  const modal = overlay.querySelector('.ai-modal');
+  modal.addEventListener('contextmenu', e => e.preventDefault());
+  modal.addEventListener('keydown', e => {
+    if ((e.ctrlKey||e.metaKey) && ['s','p','u'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+}
+
+// Override next/prev to use freemium
+function nextLesson() {
+  if (currentLesson < aiLessons.length - 1) { currentLesson++; renderModalFreemium(currentLesson); document.getElementById('aiModalOverlay').scrollTop=0; }
+}
+function prevLesson() {
+  if (currentLesson > 0) { currentLesson--; renderModalFreemium(currentLesson); document.getElementById('aiModalOverlay').scrollTop=0; }
+}
+</script>
+</body>
+</html>
